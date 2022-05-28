@@ -4475,6 +4475,11 @@ negotiator@^0.6.2:
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.3.tgz#58e323a72fedc0d6f9cd4d31fe49f51479590ccd"
   integrity sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==
 
+next-seo@^5.4.0:
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-5.4.0.tgz#37a7784b30b3f70cec3fa0d77f9dde5990822d24"
+  integrity sha512-R9DhajPwJnR/lsF2hZ8cN8uqr5CVITsRrCG1AF5+ufcaybKYOvnH8sH9MaH4/hpkps3PQ9H71S7J7SPYixAYzQ==
+
 next@12.1.5:
   version "12.1.5"
   resolved "https://registry.yarnpkg.com/next/-/next-12.1.5.tgz#7a07687579ddce61ee519493e1c178d83abac063"
@@ -5153,6 +5158,13 @@ quick-lru@^5.1.1:
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-5.1.1.tgz#366493e6b3e42a3a6885e2e99d18f80fb7a8c932"
   integrity sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==
 
+react-alice-carousel@^2.6.1:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/react-alice-carousel/-/react-alice-carousel-2.6.1.tgz#ca50b2c0098714ce66c2c0f69fb6abddce74eea9"
+  integrity sha512-U1EJ7zVVgXDp28hus/Tt9WPAlj9KovFkP2Rd8zpo1rxspDpSQpAxSSyL+w0luMf/8m0KTuDCOcf1M0QLm7X+qQ==
+  dependencies:
+    vanilla-swipe "^2.2.0"
+
 react-clientside-effect@^1.2.5:
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/react-clientside-effect/-/react-clientside-effect-1.2.5.tgz#e2c4dc3c9ee109f642fac4f5b6e9bf5bcd2219a3"
@@ -5248,6 +5260,11 @@ react-style-singleton@^2.1.0, react-style-singleton@^2.2.0:
     get-nonce "^1.0.0"
     invariant "^2.2.4"
     tslib "^2.0.0"
+
+react-swipeable@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/react-swipeable/-/react-swipeable-7.0.0.tgz#7a12570ee435d35ac700511de338384aa78d12cd"
+  integrity sha512-NI7KGfQ6gwNFN0Hor3vytYW3iRfMMaivGEuxcADOOfBCx/kqwXE8IfHFxEcxSUkxCYf38COLKYd9EMYZghqaUA==
 
 react@18.0.0:
   version "18.0.0"
@@ -6249,6 +6266,11 @@ validate-npm-package-license@^3.0.1:
   dependencies:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
+
+vanilla-swipe@^2.2.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/vanilla-swipe/-/vanilla-swipe-2.4.0.tgz#fb26199d26e0a5b26e240b3b19fc4a60110b1dce"
+  integrity sha512-EdZdBWhPQvKz8DWHRXEHxsbJnU5wWKXrXblOV9ENElDnEK3tPkrBlAYK1pgPeuUb8k2DPQEK3tFi6W4cMZgUAg==
 
 verror@1.10.0:
   version "1.10.0"
