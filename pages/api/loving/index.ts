@@ -8,25 +8,32 @@ export type Threshold = {
   end: number,
 }
 
+export type LovingRequest = {
+  name: string,
+  threshold: Threshold
+}
+
 export type LovingReponse ={
   items: LovingItems
   threshold: Threshold
   length: number
+  type: string
 }
 
-export async function getLovingItems(kind:string, threshold: Threshold): Promise<LovingReponse>{
+export async function getLovingItems(lr:LovingRequest): Promise<LovingReponse>{
   var response,respJSON:LovingReponse
 
-  respJSON = {items: [], threshold: threshold, length: 0}
+  respJSON = {items: [], threshold: {start:0,end:0}, length: 0, type: ''}
 
-  switch(kind){
+  switch(lr.name){
     case "music":{
       response = await fetch("https://z5nu7io9fc.execute-api.us-east-1.amazonaws.com/dev/FavoriteTracks");
       let tracksJSON = await response.json()
       respJSON = {
-        items: tracksJSON.slice(threshold.start, threshold.end),
-        threshold: threshold,
+        items: tracksJSON.slice(lr.threshold.start, lr.threshold.end),
+        threshold: lr.threshold,
         length: tracksJSON.length,
+        type: 'music'
       }
       break;
     }
@@ -37,9 +44,10 @@ export async function getLovingItems(kind:string, threshold: Threshold): Promise
         console.log(filmJSON)
       
         respJSON = {
-          items: filmJSON.items.slice(threshold.start, threshold.end),
-          threshold: threshold,
+          items: filmJSON.items.slice(lr.threshold.start, lr.threshold.end),
+          threshold: lr.threshold,
           length: filmJSON.size,
+          type: 'movies'
         }
       break;
 
@@ -52,9 +60,10 @@ export async function getLovingItems(kind:string, threshold: Threshold): Promise
       console.log(bookJSON)
      
       respJSON = {
-        items: bookJSON.items.slice(threshold.start, threshold.end),
-        threshold: threshold,
+        items: bookJSON.items.slice(lr.threshold.start, lr.threshold.end),
+        threshold: lr.threshold,
         length: bookJSON.size,
+        type: 'books'
       }
       break;
     }

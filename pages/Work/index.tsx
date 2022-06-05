@@ -38,8 +38,8 @@ export const Work = ({ frontmatter }: InferGetStaticPropsType<typeof getStaticPr
                     <img width="350px" height="300px" className="object-cover h-[300] w-[350]" src="https://avatars.githubusercontent.com/u/29403644?s=200&v=4" alt="" />
                 </div>
                 <div className="container basis-1/2 self-center">
-                    <p className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-[#A9E775] to-[#5A45FF]">
-                        I'm currently working in {frontmatter.companyName} as <br></br> {frontmatter.role}
+                    <p className="text-5xl leading-[55px] font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-[#A9E775] to-[#5A45FF]">
+                        I'm currently working in <a className="bg-clip-text bg-gradient-to-br from-[#A9E775] to-[#5A45FF]" href={frontmatter.companyWebsite}>{frontmatter.companyName}</a> as <br></br> {frontmatter.role}
                     </p>
                     <br />
                     <div className="grid grid-cols-2 font-light">
