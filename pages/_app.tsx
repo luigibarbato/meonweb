@@ -27,8 +27,8 @@ function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
 
   return (
     <>
-      <section className="text-gray-600 min-h-screen body-font grid bg-black stepper">
-        <div className="container-main mx-auto h-3/4 w-3/4 flex px-5 py-24 self-center items-center justify-center flex-col">
+      <section className="text-gray-600 min-h-full body-font grid bg-black stepper">
+        <div className="container m-auto bg-slate-200">
           {/* <Header /> */}
           <Navbar />
           <AnimatePresence
