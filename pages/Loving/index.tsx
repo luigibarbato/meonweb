@@ -13,7 +13,7 @@ export const Loving = () => {
 
     initialState.set('music', { start: 0, end: 8 });
     initialState.set('movies', { start: 0, end: 8 });
-    initialState.set('book', { start: 0, end: 8 });
+    initialState.set('books', { start: 0, end: 8 });
 
     const [state, setState] = useState(initialState);
     const [lovingItemRequest, setLovingItemRequest] = useState(initialLovingItemRequest);
@@ -40,6 +40,10 @@ export const Loving = () => {
             // If the API errors, the original data will be
             // rolled back by SWR automatically.
         }
+    }
+
+    function isCurrent(name: string) {
+        return name === lovingItemRequest.name;
     }
 
 
@@ -78,8 +82,6 @@ export const Loving = () => {
             }
         }
 
-        console.log(threshold)
-
         return newThreshold
     }
 
@@ -91,7 +93,7 @@ export const Loving = () => {
                         {data?.items?.map((item: LovingItem) => (
                             <a href={item.url} className="group my-10">
                                 <div className="bg-gray-200 rounded-lg overflow-hidden">
-                                    <img src={item.thumb} alt={item.name} className="w-full h-full object-center object-cover group-hover:opacity-75" />
+                                    <img src={item.thumb} alt={item.name} className="w-[131px] h-[131px] object-center object-fill group-hover:opacity-75" />
                                 </div>
                                 <h3 className="mt-4 max-h-10 text-sm text-gray-700">{item.name}</h3>
                             </a>
@@ -103,17 +105,16 @@ export const Loving = () => {
                         I'm so addicted to music, I can't stop listening to it.
                     </p>
                     <ul>
-                        <li key="music" onClick={e => syncState("music")} className="text-5xl mx-20 font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-[#A9E775] to-[#45ffd4]">Music</li>
-                        <li key="movies" onClick={e => syncState("movies")} className="text-5xl mx-20 font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-[#d3ed10] to-[#ff7a45]">Movies</li>
-                        <li key="book" onClick={e => syncState("book")} className="text-5xl mx-20 font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-[#e732bd] to-[#1b00e8]">Books</li>
+                        <li key="music">
+                            <button onClick={e => syncState("music")} className={isCurrent("music") ? 'rounded-lg text-5xl mx-20 text-black font-extrabold bg-gradient-to-br from-[#A9E775] to-[#45ffd4]' : 'text-5xl mx-20 font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-[#A9E775] to-[#45ffd4]'}>Music</button>
+                        </li>
+                        <li key="movies">
+                            <button onClick={e => syncState("movies")} className={isCurrent("movies") ? 'rounded-lg text-5xl mx-20 text-black font-extrabold bg-gradient-to-br from-[#d3ed10] to-[#ff7a45]' : 'text-5xl mx-20 font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-[#d3ed10] to-[#ff7a45]'}>Movies</button>
+                        </li>
+                        <li key="books">
+                            <button onClick={e => syncState("books")} className={isCurrent("books") ? 'rounded-lg text-5xl mx-20 text-black font-extrabold bg-gradient-to-br from-[#e732bd] to-[#1b00e8]' : 'text-5xl mx-20 font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-[#e732bd] to-[#1b00e8]'}>Books</button>
+                        </li>
                     </ul>
-                    <button
-                        className='self-center mt-14 w-1/4 h-10 px-5 rounded-lg text-indigo-100 transition-colors duration-150 bg-gradient-to-br from-[#3627a5] to-[#5A45FF]'
-                        type="submit"
-                        onClick={getNewItems}
-                    >
-                        Show more
-                    </button>
                 </div>
             </div>
         </Layout>
