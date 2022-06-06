@@ -52,7 +52,7 @@ export async function getLovingItems(lr:LovingRequest): Promise<LovingReponse>{
       break;
 
     }
-    case "book":{
+    case "books":{
       response = await fetch("http://127.0.0.1:8080/api/books");
      
       let bookJSON = await response.json()
