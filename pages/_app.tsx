@@ -27,10 +27,10 @@ function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
 
   return (
     <>
-      <section className="text-gray-600 min-h-full body-font grid bg-black stepper">
-        <div className="container m-auto bg-slate-200">
+      <section className="text-gray-600 min-h-screen body-font grid bg-black stepper">
+        <div className="container m-auto">
           {/* <Header /> */}
-          <Navbar />
+          {/* <Navbar /> */}
           <AnimatePresence
             exitBeforeEnter
             initial={false}
