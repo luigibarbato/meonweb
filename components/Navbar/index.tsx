@@ -22,11 +22,17 @@ export const Navbar = (): JSX.Element => {
     const router = useRouter()
 
     return (
-        <AnimateSharedLayout>
-            <nav className="flex">
+        <nav className="text-white bg-black py-5 px-10 md:flex md:items-center md:justify-between">
+            <div className="flex items-center justify-between">
+                <div>Logo</div>
+                <div className="md:hidden align-middle">
+                    <i className="material-icons align-middle cursor-pointer">menu</i>
+                </div>
+            </div>
+            <div className="flex items-center justify-between text-left md:block md:text-right mt-3 md:mt-0">
                 {links.map(({ name, href }) => (
                     <Link key={name} href={href}>
-                        <a className="mr-6 sm:mr-8 flex flex-col relative">
+                        <a className="mt-3 md:mx-3">
                             {name}
                             {isActiveLink(href, router.pathname) && (
                                 <motion.div
@@ -38,7 +44,24 @@ export const Navbar = (): JSX.Element => {
                         </a>
                     </Link>
                 ))}
-            </nav>
-        </AnimateSharedLayout>
+            </div>
+
+        </nav>
     )
 }
+
+<div className="text-white bg-gray-900 py-5 px-10 md:flex md:items-center md:justify-between ">
+    <div className="flex items-center justify-between">
+        <div>Logo</div>
+        <div className="md:hidden align-middle">
+            <i className="material-icons align-middle cursor-pointer">menu</i>
+        </div>
+    </div>
+    <div className="flex flex-col text-left md:block md:text-right  md:mt-0">
+        <a href="#" className=" md:mx-3">Link 1</a>
+        <a href="#" className=" md:mx-3">Link 2</a>
+        <a href="#" className=" md:mx-3">Link 3</a>
+        <a href="#" className=" md:mx-3">Link 4</a>
+
+    </div>
+</div>

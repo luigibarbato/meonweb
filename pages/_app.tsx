@@ -27,10 +27,14 @@ function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
 
   return (
     <>
-      <section className="text-gray-600 min-h-screen body-font grid bg-black stepper">
+      <section className="text-gray-600 min-h-screen flex flex-col bg-black stepper">
+        <>
+          <header className=''>
+            <Navbar></Navbar>
+          </header>
+        </>
         <div className="container m-auto">
           {/* <Header /> */}
-          {/* <Navbar /> */}
           <AnimatePresence
             exitBeforeEnter
             initial={false}
@@ -39,8 +43,8 @@ function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
             <Component {...pageProps} canonical={url} key={url} />
           </AnimatePresence>
           {/* <Footer /> */}
-        </div>
-      </section>
+        </div >
+      </section >
     </>
   )
 }

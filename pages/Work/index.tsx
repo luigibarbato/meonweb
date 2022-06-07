@@ -55,6 +55,7 @@ export const Work = ({ frontmatter }: InferGetStaticPropsType<typeof getStaticPr
                 </div>
             </div>
         </Layout >
+
     )
 }
 

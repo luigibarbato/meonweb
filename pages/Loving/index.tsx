@@ -16,6 +16,7 @@ export const Loving = () => {
     initialState.set('books', { start: 0, end: 8 });
 
     const [state, setState] = useState(initialState);
+
     const [lovingItemRequest, setLovingItemRequest] = useState(initialLovingItemRequest);
 
     const { data, mutate } = useSWR<LovingReponse>("/api/loving", () => getLovingItems(lovingItemRequest));
