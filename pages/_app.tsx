@@ -5,7 +5,7 @@ import Head from 'next/head'
 import { DefaultSeo } from 'next-seo'
 import { useEffect } from 'react'
 import { AnimatePresence } from 'framer-motion'
-import { Navbar } from '../components/Navbar'
+import Nav from '../components/Navbar'
 // import Header from '../components/Header'
 // import Footer from '../components/Footer'
 
@@ -28,11 +28,8 @@ function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
   return (
     <>
       <section className="text-gray-600 min-h-screen md:flex md:flex-col bg-black stepper">
-        <>
-          <header className=''>
-            <Navbar></Navbar>
-          </header>
-        </>
+        <Nav></Nav>
+
         {/* <Header /> */}
         <div className="m-auto self-center">
           <AnimatePresence

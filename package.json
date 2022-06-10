@@ -12,6 +12,7 @@
     "@chakra-ui/react": "^1.8.8",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@headlessui/react": "^1.6.4",
     "@zeit/next-sass": "^1.0.1",
     "asciify-image": "^0.1.8",
     "autoprefixer": "^10.4.4",
