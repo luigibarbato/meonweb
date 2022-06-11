@@ -46,11 +46,11 @@ export const Work = ({ frontmatter }: InferGetStaticPropsType<typeof getStaticPr
                     <img width={isMobile ? "200px" : "300px"} height={isMobile ? "200px" : "300px"} className="rounded-lg object-cover" className={isMobile ? "h-[200] w-[200]" : "h-[300] w-[350]"} src="https://avatars.githubusercontent.com/u/29403644?s=200&v=4" alt="" />
                 </div>
                 <div className="md:container md:basis-1/2 md:self-center">
-                    <p className="text-center text-4xl md:text-5xl md:leading-[55px] font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-[#A9E775] to-[#5A45FF]">
+                    <p className="text-center md:text-start text-4xl md:text-5xl md:leading-[55px] font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-[#A9E775] to-[#5A45FF]">
                         I'm currently working in <a className="bg-clip-text bg-gradient-to-br from-[#A9E775] to-[#5A45FF]" href={frontmatter.companyWebsite}>{frontmatter.companyName}</a> as <br></br> {frontmatter.role}
                     </p>
                     <br />
-                    <div className="grid grid-cols-2 text-center font-light">
+                    <div className="grid grid-cols-2 text-center md:text-start font-light">
                         <div className="div">
                             <p className='my-2'>Start Date</p>
                             {date(frontmatter.startDate)}
