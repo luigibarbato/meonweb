@@ -1,28 +1,23 @@
 import styles from "./Nav.module.css"
-import { Sections } from "../Config";
 import React, { useState } from "react";
-import { Transition } from "@headlessui/react";
+import { AnimateSharedLayout, motion } from 'framer-motion'
+import { useRouter } from 'next/dist/client/router'
+import { isActiveLink } from '../../lib'
+import Link from './NoScrollLink'
+import { Links } from "./Types/Link";
+import styled from 'styled-components'
+import { DesktopNavbar } from "./DesktopNavbar";
+import { MobileNavbar } from "./MobileNavbar";
 
-function Nav() {
+function Nav(links: Links) {
     const [isOpen, setIsOpen] = useState(false);
-
+    const router = useRouter()
     return (
-        <nav className="mt-10">
-            <ul className="float-right p-2 mx-24 inline-flex">
-                {Sections.map((item) => (
-                    <li className="mx-5">
-                        <a
-                            href={item.url}
-                            className="text-2xl font-extrabold  text-gray-700"
-                        >
-                            {item.name}
-                        </a>
-                    </li>
-                ))}
-            </ul>
-        </nav >
+        // <DesktopNavbar links={links.links} />
+        <MobileNavbar links={links.links}></MobileNavbar>
     );
 }
+
 
 export default Nav
 
