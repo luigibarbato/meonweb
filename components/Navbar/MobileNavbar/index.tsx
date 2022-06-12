@@ -4,6 +4,7 @@ import { Links } from "../Types/Link";
 import Link from "../NoScrollLink";
 import { isActiveLink } from "../../../lib";
 import { useRouter } from "next/router";
+import MagicRainbowButton from "../../Rainbow";
 
 const showVariants = {
     open: (height = 1000) => ({
@@ -72,9 +73,10 @@ export const MobileNavbar = (links: Links) => {
             initial={false}
             animate={isOpen ? "open" : "closed"}
             ref={containerRef}
-            className="mobile-navbar z-10"
+            className="mobile-navbar flex w-screen z-50"
         >
-            <motion.div className="background min-h-screen w-screen flex" variants={showVariants} />
+            {/* <motion.div className="background min-h-screen w-screen flex" variants={showVariants} /> */}
+            <MagicRainbowButton></MagicRainbowButton>
             <button className="hamburger-button" onClick={() => toggleOpen()}>
                 <svg width="23" height="23" viewBox="0 0 23 23">
                     <Path
@@ -99,14 +101,12 @@ export const MobileNavbar = (links: Links) => {
                     />
                 </svg>
             </button>
-            <motion.ul variants={navigationOpenVariants} className={isOpen ? `mobile-navbar-list absolute left-1/2 bottom-1/2 text-center z-50` : `mobile-navbar-list absolute left-1/2 bottom-1/2 text-center z-0`} >
+            <motion.ul variants={navigationOpenVariants} className={isOpen ? `self-center mx-auto text-center z-50` : `mobile-navbar-list absolute z-0`} >
                 {
                     links.links.map((link) => (
                         <motion.li
                             variants={menuItemVariants}
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.95 }}
-                            className={isOpen ? `mobile-navbar-item-list z-10` : `mobile-navbar-item-list z-0`}
+                            className={isOpen ? `mobile-navbar-item-list` : `mobile-navbar-item-list z-0`}
                         >
                             <Link key={link.name} href={link.url}>
                                 <a
@@ -126,5 +126,6 @@ export const MobileNavbar = (links: Links) => {
                 }
             </motion.ul>
         </motion.nav >
+
     );
 };

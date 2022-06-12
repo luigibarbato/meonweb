@@ -8,6 +8,7 @@ import { AnimatePresence } from 'framer-motion'
 import Nav from '../components/Navbar'
 import { Sections } from '../components/Config'
 import { Links } from '../components/Navbar/Types/Link'
+import MagicRainbowButton from '../components/Rainbow'
 // import Header from '../components/Header'
 // import Footer from '../components/Footer'
 
@@ -29,23 +30,24 @@ function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
 
   return (
     <>
-      <section className="text-gray-600 min-h-screen md:flex md:flex-col bg-black stepper">
-        <Nav links={Sections as Links}></Nav>
-
-        {/* <Header /> */}
+      <div className="noisy-left"> </div>
+      <div className="noisy-right"> </div>
+      <section className="text-gray-600 min-h-screen md:flex md:flex-col bg-black stepper overflow-hidden">
+        <header className="p-10 md:p-0">
+          <Nav links={Sections as Links}></Nav>
+        </header>
         <div className="m-auto self-center">
-          <AnimatePresence
-            exitBeforeEnter
-            initial={false}
-            onExitComplete={() => window.scrollTo(0, 0)}
-          >
-            <Component {...pageProps} canonical={url} key={url} />
-          </AnimatePresence>
+
+          <Component {...pageProps} canonical={url} key={url} />
         </div>
         {/* <Footer /> */}
       </section >
     </>
   )
+}
+
+const animateOnDesktop = {
+
 }
 
 export default MyApp

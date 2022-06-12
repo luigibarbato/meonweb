@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+.noisy-left{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    filter: contrast(210%) brightness(100%);
+    background: 
+        no-repeat
+      url("https://nextui.org/gradient-left-dark.svg");
+}
+
+.noisy-right{
+    filter: contrast(210%) brightness(100%);
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    background: 
+    no-repeat
+      url("https://nextui.org/gradient-right-dark.svg");
+}
+
 .container-main {
     display: grid;
     place-items: center;
@@ -43,16 +64,39 @@
     top: 0;
     left: 0;
     bottom: 0;
-    width: 300px;
   }
+
+  .pulseLogo {
+    background: #acec74;
+    box-shadow: 0 0 0 0 rgba(172, 236, 116, 1);
+    transform: scale(1);
+    animation: pulse 2s infinite;
+  }
+ 
+  @keyframes pulse {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(172, 236, 116, 0.7);
+    }
+ 
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 10px rgba(172, 236, 116, 0);
+    }
+ 
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(172, 236, 116, 0);
+    }
+  }
+ 
 
   .mobile-navbar-list,
   .mobile-navbar-item-list {
-    margin: 0;
-    padding: 0;
   }
   
   .mobile-navbar-list {
+    margin: auto;
   }
   
 

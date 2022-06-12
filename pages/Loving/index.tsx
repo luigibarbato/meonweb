@@ -88,7 +88,7 @@ export const Loving = () => {
 
     return (
         <Layout title='Loving' description='Loving'>
-            <div className="flex flex-col md:flex-row">
+            <div className="flex flex-col md:flex-row overflow-hidden">
                 <div className="order-last md:order-first m-10 md:basis-1/2 md:self-center">
                     <div className="grid grid-cols-4 md:grid-cols-2 lg:grid-cols-4 gap-4">
                         {data?.items?.map((item: LovingItem) => (
