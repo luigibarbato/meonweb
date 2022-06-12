@@ -1,13 +1,13 @@
 /** @type {import('next').NextConfig} */
 
-
-const withSass = require("@zeit/next-sass");
-
-module.exports = withSass();
+const path = require('path')
 
 const nextConfig = {
   future: {
     webpack5: true
+  },
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')],
   },
   webpack: (config) => {
     // config.experiments = { topLevelAwait: true };
