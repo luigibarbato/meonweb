@@ -38,7 +38,7 @@ export async function getLovingItems(lr:LovingRequest): Promise<LovingReponse>{
       break;
     }
     case "movies":{
-        response = await fetch("http://127.0.0.1:8080/api/movies");
+        response = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + "movies");
         let filmJSON = await response.json()
             
         console.log(filmJSON)
@@ -53,7 +53,7 @@ export async function getLovingItems(lr:LovingRequest): Promise<LovingReponse>{
 
     }
     case "books":{
-      response = await fetch("http://127.0.0.1:8080/api/books");
+      response = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + "books");
      
       let bookJSON = await response.json()
      
