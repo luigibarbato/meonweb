@@ -1,10 +1,13 @@
 import useSWR from 'swr'
-import { LovingItem } from '../../components/Loving';
 import { LovingReponse, getLovingItems, Threshold, LovingRequest } from '../api/loving';
 import { useEffect, useState } from 'react';
 import Layout from '../../components/Layout';
+import { NextPage } from 'next';
+import { ButtonSpec } from '../../components/Button/ButtonList';
+import ButtonList from '../../components/Button/ButtonList';
+import { HeroWithGrid } from '../../components/Hero/HeroWithGrid';
 
-export const Loving = () => {
+const Loving: NextPage = ({ settings, isMobile }) => {
     var initialState = new Map<string, Threshold>();
     var initialLovingItemRequest: LovingRequest = {
         name: "music",
@@ -18,6 +21,7 @@ export const Loving = () => {
     const [state, setState] = useState(initialState);
 
     const [lovingItemRequest, setLovingItemRequest] = useState(initialLovingItemRequest);
+    const [loading, setLoading] = useState(false);
 
     const { data, mutate } = useSWR<LovingReponse>("/api/loving", () => getLovingItems(lovingItemRequest));
 
@@ -37,6 +41,8 @@ export const Loving = () => {
                 populateCache: true,
                 revalidate: false
             });
+            setLoading(false)
+
         } catch (e) {
             // If the API errors, the original data will be
             // rolled back by SWR automatically.
@@ -68,10 +74,11 @@ export const Loving = () => {
 
         setLovingItemRequest(newLovingItemRequest);
 
+        setLoading(true)
     }
 
     function updateThreshold(threshold: Threshold): Threshold {
-        if (threshold.end + 4 <= data?.length ?? 0) {
+        if (threshold.end + 4 <= data?.length) {
             var newThreshold: Threshold = {
                 start: threshold.end,
                 end: threshold.end + 4
@@ -86,39 +93,30 @@ export const Loving = () => {
         return newThreshold
     }
 
+    const buttons: Array<ButtonSpec> = [{
+        colors: ['#A9E775', '#45ffd4'],
+        text: 'Music',
+        isCurrent: isCurrent('music'),
+        onClick: () => syncState('music')
+    }, {
+        colors: ['#d3ed10', '#ff7a45'],
+        text: 'Movies',
+        isCurrent: isCurrent('movies'),
+        onClick: () => syncState('movies')
+    }, {
+        colors: ['#e732bd', '#1b00e8'],
+        text: 'Books',
+        isCurrent: isCurrent('books'),
+        onClick: () => syncState('books')
+    }]
+
     return (
-        <Layout title='Loving' description='Loving'>
-            <div className="flex flex-col md:flex-row overflow-hidden">
-                <div className="order-last md:order-first m-10 md:basis-1/2 md:self-center">
-                    <div className="grid grid-cols-4 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                        {data?.items?.map((item: LovingItem) => (
-                            <a href={item.url} className="group my-4 md:my-10">
-                                <div className="bg-gray-200 rounded-lg overflow-hidden">
-                                    <img src={item.thumb} alt={item.name} className="h-16 w-24 lg:w-[131px] lg:h-[131px] object-center object-fill group-hover:opacity-75" />
-                                </div>
-                                <h3 className="mt-4 max-h-10 text-sm md:text-lg text-gray-700">{item.name}</h3>
-                            </a>
-                        ))}
-                    </div>
-                </div>
-                <div className="flex flex-col md:self-center">
-                    <p className="text-center  text-4xl md:text-5xl m-5  md:mx-20 font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-[#A9E775] to-[#5A45FF]">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    </p>
-                    <ul className='flex flex-row text-3xl m-5 self-center'>
-                        <li key="music">
-                            <button onClick={e => syncState("music")} className={isCurrent("music") ? 'rounded-lg  mx-2 p-0.5 md:text-5xl text-black font-extrabold bg-gradient-to-br from-[#A9E775] to-[#45ffd4]' : 'mx-2 p-0.5 md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-[#A9E775] to-[#45ffd4]'}>Music</button>
-                        </li>
-                        <li key="movies">
-                            <button onClick={e => syncState("movies")} className={isCurrent("movies") ? 'rounded-lg  mx-2 p-0.5 md:text-5xl  text-black font-extrabold bg-gradient-to-br from-[#d3ed10] to-[#ff7a45]' : 'mx-2 p-0.5 md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-[#d3ed10] to-[#ff7a45]'}>Movies</button>
-                        </li>
-                        <li key="books">
-                            <button onClick={e => syncState("books")} className={isCurrent("books") ? 'rounded-lg  mx-2 p-0.5 md:text-5xl  text-black font-extrabold bg-gradient-to-br from-[#e732bd] to-[#1b00e8]' : 'mx-2 p-0.5 md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-[#e732bd] to-[#1b00e8]'}>Books</button>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </Layout>
+        <Layout title={settings.name} description={settings.description} radialBackground={settings.radialBackground} colors={settings.colors}>
+            <HeroWithGrid
+                isMobile={isMobile} primaryColor={settings.colors[0]} secondaryColor={settings.colors[1]} isLoading={loading} items={data?.items} content="lorem ipsum dwqihhdwqiuHIDUWQ WQIUHDWQIUDIWQOiqwdigdwqiuqwdgdwq">
+                <ButtonList buttons={buttons} />
+            </HeroWithGrid>
+        </Layout >
     )
 }
 

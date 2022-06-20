@@ -1,22 +1,28 @@
-export const Sections = [
+const Sections = [
   {
     name: "Home",
+    description: "Home page",
     url: "/",
-    colors: ["#A9E775", "#5A45FF"],
+    colors: ["#A9E775", "#5A45FF", "#5A45FF"],
+    radialBackground: true,
   },
   {
     name: "Work",
+    description: "Home page",
     url: "/Work",
-    colors: ["#d3ed10", "#ff7a45"],
+    colors: ["#D3ED10", "#FF7A45", "#FF7A45"],
+    radialBackground: true,
   },
   {
     name: "Loving",
+    description: "Home page",
     url: "/Loving",
-    colors: ["#e732bd", "#1b00e8"],
+    colors: ["#e732bd", "#1b00e8", "#1b00e8"],
+    radialBackground: true,
   },
 ];
 
-export const Socials = [
+const Socials = [
   {
     name: "github",
     url: "url",
@@ -30,3 +36,9 @@ export const Socials = [
     url: "url",
   },
 ];
+
+
+export const Config = {
+  sections: Sections,
+  socials: Socials,
+}

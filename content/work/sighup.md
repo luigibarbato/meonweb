@@ -3,18 +3,18 @@ companyName: SIGHUP
 description: Cloud-Native company
 role: Kubernetes Engineer / Software Engineer
 mainTecnologies:
-  - Kubernetes
-  - Go
-  - DroneCI
-  - Docker
+- Kubernetes
+- Go
+- DroneCI
+- Docker
 startDate: "2021-09-15"
 endDate: ""
 companyLogo: https://avatars.githubusercontent.com/u/29403644?s=200&v=4
 companyWebsite: "https://sighup.io/"
 tags:
-  - design
-  - dev
-  - branding
+- design
+- dev
+- branding
 ---
 
 Rubber cheese mascarpone cut the cheese. Jarlsberg parmesan cheesy grin cream cheese port-salut stinking bishop ricotta brie. Roquefort when the cheese comes out everybody's happy goat cheese triangles stilton cheese and biscuits goat babybel. Bocconcini roquefort queso danish fontina pecorino.

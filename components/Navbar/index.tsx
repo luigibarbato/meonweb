@@ -1,23 +1,20 @@
-import styles from "./Nav.module.css"
-import { AnimateSharedLayout, motion } from 'framer-motion'
-import { useRouter } from 'next/dist/client/router'
-import { isActiveLink } from '../../lib'
-import Link from './NoScrollLink'
-import { Links } from "./Types/Link";
-import styled from 'styled-components'
+import { Links } from "./NavbarLink/Types/Link";
 import { DesktopNavbar } from "./DesktopNavbar";
 import { MobileNavbar } from "./MobileNavbar";
 import { useEffect, useState } from 'react';
 
-function Nav(links: Links) {
+interface Props {
+    links: Links
+}
 
+function Nav(props: Props) {
     return (
-        setNavbar(links)
+        setNavbarType(props)
     );
 }
 
 
-function setNavbar(links: Links) {
+const setNavbarType = (props: Props) => {
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
@@ -26,10 +23,10 @@ function setNavbar(links: Links) {
     }, [isMobile])
 
     if (isMobile) {
-        return <MobileNavbar links={links.links} />
+        return <MobileNavbar links={props.links} />
     }
 
-    return <DesktopNavbar links={links.links} />
+    return <DesktopNavbar links={props.links} />
 }
 
 export default Nav

@@ -1,7 +1,7 @@
 export type NavLink = {
     name: string
     url: string
-    colors: Array<String>
+    colors: Array<string>
 }
 
 export type Links = Array<NavLink>

@@ -1,24 +1,21 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import { count } from 'console';
-import type { NextApiRequest, NextApiResponse } from 'next'
-import LovingItems from '../../../components/Loving';
+import Items from '../../../components/Loving/types';
 
 export type Threshold = {
-  start: number,
-  end: number,
-}
-
+    start: number,
+    end: number,
+  }
+  
 export type LovingRequest = {
-  name: string,
-  threshold: Threshold
-}
-
+    name: string,
+    threshold: Threshold
+  }
+  
 export type LovingReponse ={
-  items: LovingItems
-  threshold: Threshold
-  length: number
-  type: string
-}
+    items: Items
+    threshold: Threshold
+    length: number
+    type: string
+  }
 
 export async function getLovingItems(lr:LovingRequest): Promise<LovingReponse>{
   var response,respJSON:LovingReponse
@@ -70,22 +67,4 @@ export async function getLovingItems(lr:LovingRequest): Promise<LovingReponse>{
 }
 
 return respJSON
-
 }
-
-// export default async function handler(
-//   req: NextApiRequest,
-//   res: NextApiResponse<TracksReponse>
-// ) {
-//   const response = await fetch("https://z5nu7io9fc.execute-api.us-east-1.amazonaws.com/dev/FavoriteTracks");
-//   const tracksJSON = await response.json()
-
-
-//   let tracksResp = {
-//     tracks: tracksJSON.slice,
-//     threshold: tracksJSON.threshold
-//   }
-
-
-//   res.status(200).json(tracksResp);
-// }
