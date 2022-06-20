@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion'
+import GradientBackground from '../../../lib/GradientBackground';
 import GradientText from '../../../lib/GradientText';
 import NoScrollLink from './NoScrollLink'
 import { NavLink } from './Types/Link'
+
+// TODO: This folder should be a serious refactor (maybe not now)
 
 interface Props {
     link: NavLink
@@ -37,11 +40,13 @@ export const NavbarLink = (props: Props) => {
                         initial="initial"
                     >
                         {props.link.name}
-                        <motion.div
-                            layoutId="navigation-underline"
-                            className="navigation-underline"
-                            animate
-                        />
+                        <GradientBackground primaryColor={props.link.colors[0]} secondaryColor={props.link.colors[1]} withTransparency={0.1} withDirection={"left"}>
+                            <motion.div
+                                layoutId="navigation-underline"
+                                className="h-1 w-full"
+                                animate
+                            />
+                        </GradientBackground>
                     </motion.a>
                 </GradientText>
             </NoScrollLink >

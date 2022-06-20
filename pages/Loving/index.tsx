@@ -7,6 +7,7 @@ import { ButtonSpec } from '../../components/Button/ButtonList';
 import ButtonList from '../../components/Button/ButtonList';
 import { HeroWithGrid } from '../../components/Hero/HeroWithGrid';
 
+// TODO: It should have a nice refactor.
 const Loving: NextPage = ({ settings, isMobile }) => {
     var initialState = new Map<string, Threshold>();
     var initialLovingItemRequest: LovingRequest = {
@@ -113,7 +114,8 @@ const Loving: NextPage = ({ settings, isMobile }) => {
     return (
         <Layout title={settings.name} description={settings.description} radialBackground={settings.radialBackground} colors={settings.colors}>
             <HeroWithGrid
-                isMobile={isMobile} primaryColor={settings.colors[0]} secondaryColor={settings.colors[1]} isLoading={loading} items={data?.items} content="lorem ipsum dwqihhdwqiuHIDUWQ WQIUHDWQIUDIWQOiqwdigdwqiuqwdgdwq">
+                isMobile={isMobile} primaryColor={settings.colors[0]} secondaryColor={settings.colors[1]} isLoading={loading} items={data?.items} content="Lorem ipsum, dolor sit amet consectetur adipisicing elit.">
+                {/* TODO: Actual ButtonList component doesn´t have same nice gradient effect we want, see commit cafff90 */}
                 <ButtonList buttons={buttons} />
             </HeroWithGrid>
         </Layout >

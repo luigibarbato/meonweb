@@ -1,3 +1,4 @@
+// TODO: WE DON'T NEED TO USE THE API HERE. WE CAN USE THE API DIRECTLY. REMOVE API FOLDER AND USE A NORMAL FETCH IN LOVING PAGE WITH THE SAME LOGIC.
 import Items from '../../../components/Loving/types';
 
 export type Threshold = {

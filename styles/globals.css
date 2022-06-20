@@ -1,29 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.noisy-left{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    filter: contrast(210%) brightness(100%);
-    background: 
-        no-repeat
-      url("https://nextui.org/gradient-left-dark.svg");
-}
-
-.noisy-right{
-    filter: contrast(210%) brightness(100%);
-    width: 50%;
-    height: 100%;
-    position: absolute;
-    right: 0;
-    background: 
-    no-repeat
-      url("https://nextui.org/gradient-right-dark.svg");
-}
-
-
+/* TODO: Cleans and Purges CSS Code */
 .background {
     position: absolute;
     top: 0;

@@ -37,7 +37,7 @@ const Grid = (props: Props) => {
     }
 
     return (
-        <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-4 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {props?.items?.map((item: Item) => (
                 <a href={item.url} className="group my-4 md:my-10">
                     <div className="bg-gray-200 rounded-lg overflow-hidden">
