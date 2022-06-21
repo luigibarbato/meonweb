@@ -6,14 +6,13 @@ interface Props {
     primaryColor: string;
     secondaryColor: string;
     withTransparency?: number;
-    withDirection?: "left" | "right";
-    withDegree?: number;
+    direction: "left" | "right";
     children: React.ReactElement;
 }
 
 export const GradientBackground = (props: Props) => {
     const gradient: React.CSSProperties = {
-        backgroundImage: `linear-gradient(to ${props.withDirection}, ${hexToRGB(props.primaryColor, props.withTransparency ? props.withTransparency : 1)}, ${hexToRGB(props.primaryColor, 1)}`,
+        backgroundImage: `linear-gradient(to ${props.direction}, ${hexToRGB(props.primaryColor, props.withTransparency ? props.withTransparency : 1)}, ${hexToRGB(props.primaryColor, 1)}`,
         backgroundSize: "100%",
     }
 

@@ -11,8 +11,7 @@ interface Props {
     items: Items | undefined,
     children: React.ReactNode,
 }
-// FIXME: Grid has conflicts with text: weird resizes, etc. 
-// TODO: It is not responsive.
+// TODO: It's not responsive.
 export const HeroWithGrid = (props: Props) => {
     return (
         <div className="flex flex-col md:flex-row overflow-hidden justify-center">
@@ -22,7 +21,7 @@ export const HeroWithGrid = (props: Props) => {
             <div className="flex flex-col md:self-center md:basis-1/2">
                 <GradientText primaryColor={props.primaryColor} secondaryColor={props.secondaryColor}>
                     <p className="text-center text-4xl md:text-5xl m-5 font-extrabold">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem
                     </p>
                 </GradientText>
                 {props.children}

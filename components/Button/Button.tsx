@@ -1,26 +1,54 @@
 import GradientBackground from "../../lib/GradientBackground";
+import GradientText from "../../lib/GradientText";
 
 interface Props {
     colors: string | Array<string>,
     text: string,
+    withBackground?: boolean
     isCurrent?: boolean,
     onClick?: () => void,
 }
 
+const Button = ({ ...props }: Props) => {
+    return props.withBackground ? <WithBackground {...props} /> : <Normal {...props} />
+}
 
-const Button = (props: Props) => {
-    return (
-        // TODO: Gradient must be optional
-        <GradientBackground primaryColor={props.colors[0]} secondaryColor={props.colors[1]} withDirection={"right"}>
+const Normal = ({ ...props }: Props) => {
+    return (props.isCurrent ?
+        <GradientText primaryColor={props.colors[0]} secondaryColor={props.colors[1]}>
             <button
                 onClick={props.onClick}
-                className={props.isCurrent ?
-                    // TODO: Remove dynamic tailwindcss classname. Doesn´t work and not needed more. (We use the GradientBackground util component instead) 
-                    `rounded-lg  mx-2 p-0.5 md:text-5xl text-black font-extrabold bg-gradient-to-br from-[${props.colors[0]}] to-[${props.colors[1]}]` :
-                    `mx-2 p-0.5 md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-[${props.colors[0]}] to-[${props.colors[1]}]`}>
+                className="rounded-lg  mx-2 p-0.5 md:text-5xl text-black font-extrabold"
+            >
+                {props.text}
+            </button>
+        </GradientText >
+        : <button
+            onClick={props.onClick}
+            className="rounded-lg  mx-2 p-0.5 md:text-5xl text-black font-extrabold"
+        >
+            {props.text}
+        </button>)
+}
+
+const WithBackground = ({ ...props }: Props) => {
+    return (props.isCurrent ?
+        < GradientBackground primaryColor={props.colors[0]} secondaryColor={props.colors[1]} direction="right">
+            <button
+                onClick={props.onClick}
+                className="rounded-lg mx-2 p-0.5 md:text-5xl text-black font-extrabold"
+            >
                 {props.text}
             </button>
         </GradientBackground >
+        : <GradientText primaryColor={props.colors[0]} secondaryColor={props.colors[1]}>
+            <button
+                onClick={props.onClick}
+                className="mx-2 p-0.5 md:text-5xl text-black font-extrabold"
+            >
+                {props.text}
+            </button>
+        </GradientText >
     )
 }
 

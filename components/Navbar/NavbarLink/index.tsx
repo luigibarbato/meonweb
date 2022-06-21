@@ -4,7 +4,7 @@ import GradientText from '../../../lib/GradientText';
 import NoScrollLink from './NoScrollLink'
 import { NavLink } from './Types/Link'
 
-// TODO: This folder should be a serious refactor (maybe not now)
+// TODO: This folder should to have a serious refactor (maybe not now)
 
 interface Props {
     link: NavLink
@@ -40,7 +40,7 @@ export const NavbarLink = (props: Props) => {
                         initial="initial"
                     >
                         {props.link.name}
-                        <GradientBackground primaryColor={props.link.colors[0]} secondaryColor={props.link.colors[1]} withTransparency={0.1} withDirection={"left"}>
+                        <GradientBackground primaryColor={props.link.colors[0]} secondaryColor={props.link.colors[1]} withTransparency={0.1} direction="left">
                             <motion.div
                                 layoutId="navigation-underline"
                                 className="h-1 w-full"

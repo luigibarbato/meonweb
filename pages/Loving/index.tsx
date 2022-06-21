@@ -98,23 +98,31 @@ const Loving: NextPage = ({ settings, isMobile }) => {
         colors: ['#A9E775', '#45ffd4'],
         text: 'Music',
         isCurrent: isCurrent('music'),
+        withBackground: true,
         onClick: () => syncState('music')
     }, {
         colors: ['#d3ed10', '#ff7a45'],
         text: 'Movies',
         isCurrent: isCurrent('movies'),
+        withBackground: true,
         onClick: () => syncState('movies')
     }, {
         colors: ['#e732bd', '#1b00e8'],
         text: 'Books',
         isCurrent: isCurrent('books'),
+        withBackground: true,
         onClick: () => syncState('books')
     }]
 
     return (
         <Layout title={settings.name} description={settings.description} radialBackground={settings.radialBackground} colors={settings.colors}>
             <HeroWithGrid
-                isMobile={isMobile} primaryColor={settings.colors[0]} secondaryColor={settings.colors[1]} isLoading={loading} items={data?.items} content="Lorem ipsum, dolor sit amet consectetur adipisicing elit.">
+                isMobile={isMobile}
+                primaryColor={settings.colors[0]}
+                secondaryColor={settings.colors[1]}
+                isLoading={loading}
+                items={data?.items}
+                content="Lorem ipsum, dolor sit amet consectetur adipisicing elit.">
                 {/* TODO: Actual ButtonList component doesn´t have same nice gradient effect we want, see commit cafff90 */}
                 <ButtonList buttons={buttons} />
             </HeroWithGrid>

@@ -3,6 +3,7 @@ import Button from "./Button"
 export type ButtonSpec = {
     colors: string | Array<string>,
     text: string,
+    withBackground?: boolean
     isCurrent?: boolean,
     onClick?: () => void,
 }
