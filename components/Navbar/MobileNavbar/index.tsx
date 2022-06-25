@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import { motion, useCycle } from "framer-motion";
 import { Links } from "../NavbarLink/Types/Link";
 import { useRouter } from "next/router";
@@ -6,11 +5,37 @@ import { NavbarLink } from "../NavbarLink";
 
 const menuVariants = {
     open: {
-        opacity: 1,
+        width: "100%",
+        height: "100%",
         transition: {
             type: "spring",
-            stiffness: 20,
-            restDelta: 2
+            stiffness: 400,
+            damping: 40
+        },
+    },
+    closed: {
+        transition: {
+            type: "spring",
+            stiffness: 400,
+            damping: 40,
+            when: "afterChildren",
+        },
+        transitionEnd: {
+            width: 0,
+            height: 0,
+        }
+    }
+}
+
+const dropMenuVariants = {
+    open: {
+        visibility: "visible",
+        opacity: 1,
+        transition: {
+            delay: 0.5,
+            type: "spring",
+            stiffness: 400,
+            damping: 40
         }
     },
     closed: {
@@ -20,6 +45,9 @@ const menuVariants = {
             type: "spring",
             stiffness: 400,
             damping: 40
+        },
+        transitionEnd: {
+            visibility: "hidden"
         }
     }
 };
@@ -27,26 +55,32 @@ const menuVariants = {
 
 const navigationOpenVariants = {
     open: {
+        visibility: "visible",
         transition: { staggerChildren: 0.07, delayChildren: 0.2 }
     },
     closed: {
-        transition: { staggerChildren: 0.05, staggerDirection: -1, }
+        transition: { staggerChildren: 0.05, staggerDirection: -1, },
+        transitionEnd: {
+            visibility: "hidden"
+        }
     }
 };
 
 const menuItemVariants = {
     open: {
-        y: 0,
+        visibility: "visible",
         opacity: 1,
         transition: {
             y: { stiffness: 1000, velocity: -100 }
         }
     },
     closed: {
-        y: 50,
         opacity: 0,
         transition: {
             y: { stiffness: 1000 }
+        },
+        transitionEnd: {
+            visibility: "hidden"
         }
     }
 }
@@ -57,19 +91,16 @@ interface Props {
 
 export const MobileNavbar = (props: Props) => {
     const [isOpen, toggleOpen] = useCycle(false, true);
-    const containerRef = useRef(null);
     const router = useRouter()
-    console.log(isOpen)
     return (
         <motion.nav
-            initial={false}
             animate={isOpen ? "open" : "closed"}
-            ref={containerRef}
-            className="mobile-navbar flex w-screen"
+            variants={menuVariants}
+            className={isOpen ? "mobile-navbar flex w-screen" : "mobile-navbar flex w-screen"}
         >
             <motion.div
-                className="background  bg-white min-h-screen w-screen flex"
-                variants={menuVariants}
+                className="background bg-black backdrop-blur-xl bg-opacity-50 min-h-screen w-screen flex"
+                variants={dropMenuVariants}
             >
             </motion.div>
             <button className="hamburger-button" onClick={() => toggleOpen()}>
@@ -109,12 +140,12 @@ export const MobileNavbar = (props: Props) => {
                     />
                 </svg>
             </button>
-            <motion.ul variants={navigationOpenVariants} className={isOpen ? `self-center mx-auto text-center z-50` : `mobile-navbar-list absolute z-0`} >
+            <motion.ul variants={navigationOpenVariants} className={isOpen ? `mobile-navbar-list self-center m-auto text-center z-50` : `mobile-navbar-list self-center m-auto text-center z-0`} >
                 {
                     props.links.map((link) => (
                         <motion.li
                             variants={menuItemVariants}
-                            className={isOpen ? `mobile-navbar-item-list` : `mobile-navbar-item-list z-0`}
+                            onClick={() => toggleOpen()}
                         >
                             <NavbarLink link={link} actualPathName={router.pathname} />
                         </motion.li>))
