@@ -47,7 +47,7 @@ const Layout = ({ children, title, description, colors, radialBackground }: Prop
       &::after {
         position: absolute;
         content: "";
-        top: calc(var(--card-height) / 6);
+        top: calc(var(--radiusGradient-height) / 6);
         left: 0;
         right: 0;
         z-index: -1;
@@ -55,7 +55,7 @@ const Layout = ({ children, title, description, colors, radialBackground }: Prop
         width: 100%;
         margin: 0 auto;
         transform: scale(0.8);
-        filter: blur(calc(var(--card-height) / 6));
+        filter: blur(calc(var(--radiusGradient-height) / 6));
         background-image: linear-gradient(var(--rotate), ${colors[0]}, ${colors[1]} 43%, ${colors[2]});
           opacity: 0.3;
         transition: opacity .5s;

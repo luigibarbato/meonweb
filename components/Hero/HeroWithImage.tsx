@@ -1,4 +1,4 @@
-import GradientText from "../../lib/GradientText";
+import { GradientText } from "../../lib/Gradient";
 
 interface Props {
     isMobile: boolean,
@@ -16,7 +16,7 @@ export const HeroWithImage = ({ ...props }: Props) => {
                 <img width={props.isMobile ? "150px" : "300px"} height={props.isMobile ? "150px" : "300px"} className={props.isMobile ? "rounded-lg overflow-hidden object-cover h-36 w-36" : "rounded-lg overflow-hidden object-cover h-[300] w-[350]"} src={props.image} alt="" />
             </div>
             <div className="md:container md:basis-1/2 md:self-center m-3 md:m-16">
-                <GradientText primaryColor={props.primaryColor} secondaryColor={props.secondaryColor}>
+                <GradientText primaryColor={props.primaryColor} secondaryColor={props.secondaryColor} direction="right">
                     <p className={`text-center tablet:text-center md:text-start text-4xl md:text-5xl font-extrabold`}>
                         {props.content}
                     </p>

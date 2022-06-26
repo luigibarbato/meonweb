@@ -1,5 +1,4 @@
-import GradientBackground from "../../lib/GradientBackground";
-import GradientText from "../../lib/GradientText";
+import { GradientBackground, GradientText } from "../../lib/Gradient";
 
 interface Props {
     colors: string | Array<string>,
@@ -15,7 +14,7 @@ const Button = ({ ...props }: Props) => {
 
 const Normal = ({ ...props }: Props) => {
     return (props.isCurrent ?
-        <GradientText primaryColor={props.colors[0]} secondaryColor={props.colors[1]}>
+        <GradientText primaryColor={props.colors[0]} secondaryColor={props.colors[1]} direction="right">
             <button
                 onClick={props.onClick}
                 className="rounded-lg  mx-2 p-0.5 md:text-5xl text-black font-extrabold"
@@ -41,7 +40,7 @@ const WithBackground = ({ ...props }: Props) => {
                 {props.text}
             </button>
         </GradientBackground >
-        : <GradientText primaryColor={props.colors[0]} secondaryColor={props.colors[1]}>
+        : <GradientText primaryColor={props.colors[0]} secondaryColor={props.colors[1]} direction="right">
             <button
                 onClick={props.onClick}
                 className="mx-2 p-0.5 md:text-5xl text-black font-extrabold"

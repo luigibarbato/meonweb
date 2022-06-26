@@ -1,7 +1,5 @@
 import React, { Children, isValidElement, cloneElement } from 'react';
 
-// TODO: Use a unique file in lib/Gradient.tsx 
-
 interface Props {
     primaryColor: string;
     secondaryColor: string;

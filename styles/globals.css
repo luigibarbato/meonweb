@@ -1,56 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* TODO: Cleans and Purges CSS Code */
-.background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-  }
 
-.mobile-navbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-  }
-
-  .hamburger-button {
-    outline: none;
-    border: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    cursor: pointer;
-    position: absolute;
-    transform: translate(100%,100%);
-    border-radius: 50%;
-    background: transparent;
-  }
-  
-  .refresh {
-    padding: 10px;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.4);
-    border-radius: 10px;
-    width: 20px;
-    height: 20px;
-    top: 10px;
-    right: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-  }
-  
-
-@layer components {
-.navigation-underline {
-    @apply w-full border border-yellow-300;
-}
-}
-
+/* Rules for Radial Background */
 @property --rotate {
   syntax: "<angle>";
   initial-value: 132deg;
@@ -58,9 +10,10 @@
 }
 
 :root {
-  --card-height: 50vh;
-  --card-width: calc(var(--card-height) / 1.5);
+  --radiusGradient-height: 50vh;
+  --radiusGradient-width: calc(var(--radiusGradient-height) / 1.5);
 }
+/**/
 
 body {
   background: #0f1117;

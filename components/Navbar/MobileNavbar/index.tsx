@@ -96,14 +96,14 @@ export const MobileNavbar = (props: Props) => {
         <motion.nav
             animate={isOpen ? "open" : "closed"}
             variants={menuVariants}
-            className={isOpen ? "mobile-navbar flex w-screen" : "mobile-navbar flex w-screen z-50"}
+            className={isOpen ? "absolute top-0 left-0 bottom-0 flex w-screen" : "absolute top-0 left-0 bottom-0 flex w-screen z-50"}
         >
             <motion.div
-                className="background bg-black backdrop-blur-xl bg-opacity-50 min-h-screen w-screen flex"
+                className="absolute top-0 left-0 bottom-0 bg-black backdrop-blur-xl bg-opacity-50 min-h-screen w-screen flex"
                 variants={dropMenuVariants}
             >
             </motion.div>
-            <button className="hamburger-button" onClick={() => toggleOpen()}>
+            <button className="absolute translate-x-full translate-y-full" onClick={() => toggleOpen()}>
                 <svg width="23" height="23" viewBox="0 0 23 23">
                     <motion.path
                         fill="transparent"

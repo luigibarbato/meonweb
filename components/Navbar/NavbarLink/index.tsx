@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
-import GradientBackground from '../../../lib/GradientBackground';
-import GradientText from '../../../lib/GradientText';
+import { GradientBackground, GradientText } from '../../../lib/Gradient';
 import NoScrollLink from './NoScrollLink'
 import { NavLink } from './Types/Link'
 
@@ -31,7 +30,7 @@ export const NavbarLink = (props: Props) => {
     if (isActive) {
         return (
             <NoScrollLink href={props.link.url} scroll={false}>
-                <GradientText primaryColor={props.link.colors[0]} secondaryColor={props.link.colors[1]}>
+                <GradientText primaryColor={props.link.colors[0]} secondaryColor={props.link.colors[1]} direction='right'>
                     <motion.a
                         href={props.link.url}
                         className="mr-6 sm:mr-8 mt-5 md:mt-0 flex flex-col relative text-4xl tablet:text-5xl md:text-2xl font-bold"
