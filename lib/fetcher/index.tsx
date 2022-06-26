@@ -8,7 +8,7 @@ export async function getLovingItems(lr: LovingRequest): Promise<LovingReponse> 
 
     switch (lr.name) {
         case "music": {
-            response = await fetch("https://z5nu7io9fc.execute-api.us-east-1.amazonaws.com/dev/FavoriteTracks");
+            response = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + "tracks");
             let tracksJSON = await response.json()
             respJSON = {
                 items: tracksJSON.slice(lr.threshold.start, lr.threshold.end),
