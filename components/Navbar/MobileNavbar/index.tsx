@@ -99,7 +99,7 @@ export const MobileNavbar = (props: Props) => {
             className={isOpen ? "absolute top-0 left-0 bottom-0 flex w-screen" : "absolute top-0 left-0 bottom-0 flex w-screen z-50"}
         >
             <motion.div
-                className="absolute top-0 left-0 bottom-0 bg-black backdrop-blur-xl bg-opacity-50 min-h-screen w-screen flex"
+                className="absolute top-0 left-0 bottom-0 bg-black backdrop-blur-xl bg-opacity-50 h-screen w-screen flex"
                 variants={dropMenuVariants}
             >
             </motion.div>
