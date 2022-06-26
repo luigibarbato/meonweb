@@ -26,7 +26,7 @@ function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
   useEffect(() => {
     let res = window.matchMedia("only screen and (max-width: 912px)").matches;
     setIsMobile(res)
-  })
+  }), [setIsMobile]
 
   useEffect(() => {
     registeredPages.forEach(section => {

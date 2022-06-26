@@ -29,7 +29,7 @@ const Loving: NextPage = ({ settings, isMobile }: any) => {
 
     useEffect(() => {
         getNewItems(lovingItemRequest);
-    }, [state, lovingItemRequest]);
+    }, [state, lovingItemRequest, getNewItems]);
 
     async function getNewItems(lR: LovingRequest) {
         try {

@@ -29,7 +29,7 @@ const MobileGrid = (props: Props) => {
     return (
         <div className="grid p-3 w-3/4 h-3/4 mx-auto grid-cols-2 gap-2 bg-black rounded-lg bg-opacity-20">
             {props.items?.map((item: Item) => (
-                <a href={item.url} className="group my-4">
+                <a key={item.name} href={item.url} className="group my-4">
                     <div className="bg-gray-200 w-20 h-20 m-auto rounded-lg overflow-hidden shadow-2xl shadow-cyan-500/50">
                         <img src={item.thumb} alt={item.name} className="object-center object-fill w-20 h-20 group-hover:opacity-75" />
                     </div>
@@ -56,7 +56,7 @@ const DefaultGrid = (props: Props) => {
     return (
         <div className="grid grid-cols-2 xl:grid-cols-4 gap-4 justify-items-center">
             {props?.items?.map((item: Item) => (
-                <a href={item.url} className="group my-4 md:my-10">
+                <a key={item.name} href={item.url} className="group my-4 md:my-10">
                     <div className="bg-gray-200 rounded-lg overflow-hidden">
                         <img src={item.thumb} alt={item.name} className="h-16 w-24 lg:w-[131px] lg:h-[131px] object-center object-fill group-hover:opacity-75" />
                     </div>

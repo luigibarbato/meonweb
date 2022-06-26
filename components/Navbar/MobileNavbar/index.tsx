@@ -144,6 +144,7 @@ export const MobileNavbar = (props: Props) => {
                 {
                     props.links.map((link) => (
                         <motion.li
+                            key={link.name}
                             variants={menuItemVariants}
                             onClick={() => toggleOpen()}
                         >
