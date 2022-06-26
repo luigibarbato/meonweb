@@ -17,7 +17,7 @@ export const HeroWithImage = ({ ...props }: Props) => {
             </div>
             <div className="lg:container lg:basis-1/2 lg:self-center m-3 lg:m-16">
                 <GradientText primaryColor={props.primaryColor} secondaryColor={props.secondaryColor} direction="right">
-                    <p className={`text-center md:text-center  text-4xl md:text-5xl font-extrabold`}>
+                    <p className={`text-center md:text-center lg:text-start text-4xl md:text-5xl font-extrabold`}>
                         {props.content}
                     </p>
                 </GradientText>

@@ -17,14 +17,14 @@ const Normal = ({ ...props }: Props) => {
         <GradientText primaryColor={props.colors[0]} secondaryColor={props.colors[1]} direction="right">
             <button
                 onClick={props.onClick}
-                className="rounded-lg  mx-2 p-0.5 md:text-5xl text-black font-extrabold"
+                className="rounded-lg  mx-2 p-0.5 lg:text-5xl text-black font-extrabold"
             >
                 {props.text}
             </button>
         </GradientText >
         : <button
             onClick={props.onClick}
-            className="rounded-lg  mx-2 p-0.5 md:text-5xl text-black font-extrabold"
+            className="rounded-lg  mx-2 p-0.5 lg:text-5xl text-black font-extrabold"
         >
             {props.text}
         </button>)
@@ -35,7 +35,7 @@ const WithBackground = ({ ...props }: Props) => {
         < GradientBackground primaryColor={props.colors[0]} secondaryColor={props.colors[1]} direction="right">
             <button
                 onClick={props.onClick}
-                className="rounded-lg mx-2 p-0.5 md:text-5xl text-black font-extrabold"
+                className="rounded-lg mx-2 p-0.5 lg:text-5xl text-black font-extrabold"
             >
                 {props.text}
             </button>
@@ -43,7 +43,7 @@ const WithBackground = ({ ...props }: Props) => {
         : <GradientText primaryColor={props.colors[0]} secondaryColor={props.colors[1]} direction="right">
             <button
                 onClick={props.onClick}
-                className="mx-2 p-0.5 md:text-5xl text-black font-extrabold"
+                className="mx-2 p-0.5 lg:text-5xl text-black font-extrabold"
             >
                 {props.text}
             </button>

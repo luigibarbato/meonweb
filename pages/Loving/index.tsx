@@ -1,6 +1,6 @@
 import useSWR from 'swr'
-import { LovingReponse, Threshold, LovingRequest } from './fetcher/types';
-import { getLovingItems } from './fetcher';
+import { LovingReponse, Threshold, LovingRequest } from '../../lib/fetcher/types';
+import { getLovingItems } from '../../lib/fetcher';
 import { useEffect, useState } from 'react';
 import Layout from '../../components/Layout';
 import { NextPage } from 'next';
