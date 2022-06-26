@@ -33,7 +33,7 @@ export const NavbarLink = (props: Props) => {
                 <GradientText primaryColor={props.link.colors[0]} secondaryColor={props.link.colors[1]} direction='right'>
                     <motion.a
                         href={props.link.url}
-                        className="mr-6 sm:mr-8 mt-5 md:mt-0 flex flex-col relative text-4xl tablet:text-5xl md:text-2xl font-bold"
+                        className="mr-6 sm:mr-8 mt-5 lg:mt-0 flex flex-col relative text-4xl sm:text-5xl lg:text-2xl font-bold"
                         variants={variants}
                         animate="enter"
                         initial="initial"
@@ -56,7 +56,7 @@ export const NavbarLink = (props: Props) => {
         <NoScrollLink href={props.link.url} scroll={false}>
             <motion.a
                 href={props.link.url}
-                className="mr-6 mt-5 md:mt-0 sm:mr-8 flex flex-col relative text-4xl tablet:text-5xl md:text-2xl font-bold"
+                className="mr-6 mt-5 lg:mt-0 sm:mr-8 flex flex-col relative text-4xl sm:text-5xl lg:text-2xl font-bold"
                 variants={variants}
                 animate="exit"
                 initial="initial"

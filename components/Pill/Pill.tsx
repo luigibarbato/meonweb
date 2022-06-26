@@ -10,6 +10,6 @@ export const Pill = (props: Props) => {
     }
 
     return (
-        <span style={bgColor} className={`inline-block rounded-full px-3 py-1 text-sm tablet:text-lg font-semibold text-center text-black mr-2 mb-2`}>{props.text}</span>
+        <span style={bgColor} className={`inline-block rounded-full px-3 py-1 text-sm sm:text-lg md:text-xl font-semibold text-center text-black mr-2 mb-2`}>{props.text}</span>
     )
 }

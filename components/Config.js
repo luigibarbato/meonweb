@@ -22,23 +22,7 @@ const Sections = [
   },
 ];
 
-const Socials = [
-  {
-    name: "github",
-    url: "url",
-  },
-  {
-    name: "twitter",
-    url: "url",
-  },
-  {
-    name: "linkedin",
-    url: "url",
-  },
-];
-
 
 export const Config = {
   sections: Sections,
-  socials: Socials,
 }
