@@ -1,10 +1,10 @@
 import { Links } from "./NavbarLink/Types/Link";
 import { DesktopNavbar } from "./DesktopNavbar";
 import { MobileNavbar } from "./MobileNavbar";
-import { useEffect, useState } from 'react';
 
 interface Props {
     links: Links
+    isMobile: boolean
 }
 
 function Nav(props: Props) {
@@ -15,14 +15,7 @@ function Nav(props: Props) {
 
 
 const setNavbarType = (props: Props) => {
-    const [isMobile, setIsMobile] = useState(false);
-
-    useEffect(() => {
-        let res = window.matchMedia("only screen and (max-width: 760px)").matches;
-        setIsMobile(res)
-    }, [isMobile])
-
-    if (isMobile) {
+    if (props.isMobile) {
         return <MobileNavbar links={props.links} />
     }
 

@@ -18,10 +18,10 @@ export type SectionPillProps = {
 
 export const SectionPill = (props: Props) => {
     return (
-        <div className="grid grid-cols-2 text-center md:text-start font-light">
+        <div className="grid grid-cols-2 text-center tablet:text-center md:text-start font-light">
             {props.sections.map((section, i) => (
                 <div key={i}>
-                    <p className='my-2 '>{section.name}</p>
+                    <p className='my-2 tablet:text-lg'>{section.name}</p>
                     {section.entries.map((entry, j) => (
                         <Pill color={section.color} key={j} text={entry} />
                     ))}

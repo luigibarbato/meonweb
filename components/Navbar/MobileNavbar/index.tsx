@@ -1,9 +1,9 @@
-import { motion, useCycle } from "framer-motion";
+import { motion, useCycle, Variants } from "framer-motion";
 import { Links } from "../NavbarLink/Types/Link";
 import { useRouter } from "next/router";
 import { NavbarLink } from "../NavbarLink";
 
-const menuVariants = {
+const menuVariants: Variants = {
     open: {
         width: "100%",
         height: "100%",
@@ -27,7 +27,7 @@ const menuVariants = {
     }
 }
 
-const dropMenuVariants = {
+const dropMenuVariants: Variants = {
     open: {
         visibility: "visible",
         opacity: 1,
@@ -53,7 +53,7 @@ const dropMenuVariants = {
 };
 
 
-const navigationOpenVariants = {
+const navigationOpenVariants: Variants = {
     open: {
         visibility: "visible",
         transition: { staggerChildren: 0.07, delayChildren: 0.2 }
@@ -66,7 +66,7 @@ const navigationOpenVariants = {
     }
 };
 
-const menuItemVariants = {
+const menuItemVariants: Variants = {
     open: {
         visibility: "visible",
         opacity: 1,
@@ -96,7 +96,7 @@ export const MobileNavbar = (props: Props) => {
         <motion.nav
             animate={isOpen ? "open" : "closed"}
             variants={menuVariants}
-            className={isOpen ? "mobile-navbar flex w-screen" : "mobile-navbar flex w-screen"}
+            className={isOpen ? "mobile-navbar flex w-screen" : "mobile-navbar flex w-screen z-50"}
         >
             <motion.div
                 className="background bg-black backdrop-blur-xl bg-opacity-50 min-h-screen w-screen flex"

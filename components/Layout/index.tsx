@@ -4,28 +4,28 @@ import { motion } from 'framer-motion'
 import styled, { keyframes } from 'styled-components';
 
 type Props = {
-    children: ReactNode
-    title: string
-    description: string
-    colors?: Array<String>
-    radialBackground: boolean,
+  children: ReactNode
+  title: string
+  description: string
+  colors?: Array<String>
+  radialBackground: boolean,
 }
 
 const variants = {
-    hidden: { opacity: 0, x: 0, y: 0 },
-    enter: { opacity: 1, x: 0, y: 0 },
-    exit: { opacity: 0, x: 0, y: 0, transition: { duration: 1.2 } },
+  hidden: { opacity: 0, x: 0, y: 0 },
+  enter: { opacity: 1, x: 0, y: 0 },
+  exit: { opacity: 0, x: 0, y: 0, transition: { duration: 1.2 } },
 }
 
 const Layout = ({ children, title, description, colors, radialBackground }: Props) => {
-    const spin = keyframes`0% {
+  const spin = keyframes`0% {
         --rotate: 0deg;
       }
       100% {
         --rotate: 360deg;
       }`
 
-    const RadialBackground = styled.div`
+  const RadialBackground = styled.div`
       &:hover {
         color: rgb(88 199 250 / 100%);
         transition: color 1s;
@@ -61,27 +61,26 @@ const Layout = ({ children, title, description, colors, radialBackground }: Prop
         transition: opacity .5s;
         animation: ${spin} 8.5s linear infinite;
       `
-    return (
-        <div>
-            <NextSeo title={title} description={description} openGraph={{ title, description }} />
-            {/* TODO: Animation Only on Desktop */}
-            <motion.main
-                initial="hidden"
-                animate="enter"
-                exit="exit"
-                variants={variants}
-                transition={{ type: 'linear' }}
-            >
-                {radialBackground ? (
-                    <RadialBackground className="container">
-                        {children}
-                    </RadialBackground>) : (
-                    children)
-                }
+  return (
+    <div>
+      <NextSeo title={title} description={description} openGraph={{ title, description }} />
+      <motion.main
+        initial="hidden"
+        animate="enter"
+        exit="exit"
+        variants={variants}
+        transition={{ type: 'linear' }}
+      >
+        {radialBackground ? (
+          <RadialBackground className="container mx-auto">
+            {children}
+          </RadialBackground>) : (
+          children)
+        }
 
-            </motion.main>
-        </div>
-    )
+      </motion.main>
+    </div>
+  )
 }
 
 export default Layout

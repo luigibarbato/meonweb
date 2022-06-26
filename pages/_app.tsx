@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    let res = window.matchMedia("only screen and (max-width: 760px)").matches;
+    let res = window.matchMedia("only screen and (max-width: 912px)").matches;
     setIsMobile(res)
   }, [isMobile])
 
@@ -42,7 +42,7 @@ function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
   return (
     <section className="text-gray-600 min-h-screen md:flex md:flex-col stepper overflow-hidden">
       <header className="p-10 md:p-0">
-        <Nav links={Config.sections as Links}></Nav>
+        <Nav links={Config.sections as Links} isMobile={isMobile}></Nav>
       </header>
       <div className="m-auto self-center z-10">
         {/* TODO: Settings Must be an interface/type */}

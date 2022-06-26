@@ -11,11 +11,10 @@ interface Props {
     items: Items | undefined,
     children: React.ReactNode,
 }
-// TODO: It's not responsive.
 export const HeroWithGrid = (props: Props) => {
     return (
-        <div className="flex flex-col md:flex-row overflow-hidden justify-center">
-            <div className="order-last md:order-first basis-1/2 md:basis-1/3 md:self-center">
+        <div className="flex flex-col tablet:flex-col md:flex-row overflow-hidden justify-center">
+            <div className="order-last tablet:order-last md:order-first basis-1/2 tablet:basis-1/2 md:basis-1/3 md:self-center tablet:mt-10">
                 <Grid isLoading={props.isLoading} isMobile={props.isMobile} items={props.items}></Grid>
             </div>
             <div className="flex flex-col md:self-center md:basis-1/2">

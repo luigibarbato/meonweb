@@ -8,7 +8,7 @@ import ButtonList from '../../components/Button/ButtonList';
 import { HeroWithGrid } from '../../components/Hero/HeroWithGrid';
 
 // TODO: It should have a nice refactor.
-const Loving: NextPage = ({ settings, isMobile }) => {
+const Loving: NextPage = ({ settings, isMobile }: any) => {
     var initialState = new Map<string, Threshold>();
     var initialLovingItemRequest: LovingRequest = {
         name: "music",
@@ -79,7 +79,7 @@ const Loving: NextPage = ({ settings, isMobile }) => {
     }
 
     function updateThreshold(threshold: Threshold): Threshold {
-        if (threshold.end + 4 <= data?.length) {
+        if (threshold.end + 4 <= (data?.length ?? 0)) {
             var newThreshold: Threshold = {
                 start: threshold.end,
                 end: threshold.end + 4
@@ -123,7 +123,7 @@ const Loving: NextPage = ({ settings, isMobile }) => {
                 isLoading={loading}
                 items={data?.items}
                 content="Lorem ipsum, dolor sit amet consectetur adipisicing elit.">
-                {/* TODO: Actual ButtonList component doesn´t have same nice gradient effect we want, see commit cafff90 */}
+                {/* TODO: Actual ButtonList component doesn´t have a nice gradient effect we want, see commit cafff90 */}
                 <ButtonList buttons={buttons} />
             </HeroWithGrid>
         </Layout >
