@@ -27,6 +27,8 @@ const Loving: NextPage = ({ settings, isMobile }: any) => {
 
     const { data, mutate } = useSWR<LovingReponse>("/api/loving", () => getLovingItems(lovingItemRequest));
 
+    console.log(data)
+
     useEffect(() => {
         getNewItems(lovingItemRequest);
     }, [state, lovingItemRequest, getNewItems]);

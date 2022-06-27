@@ -10,12 +10,16 @@ export async function getLovingItems(lr: LovingRequest): Promise<LovingReponse> 
         case "music": {
             response = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + "tracks");
             let tracksJSON = await response.json()
+            console.log(tracksJSON)
             respJSON = {
-                items: tracksJSON.slice(lr.threshold.start, lr.threshold.end),
+                items: tracksJSON.items.slice(lr.threshold.start, lr.threshold.end),
                 threshold: lr.threshold,
                 length: tracksJSON.length,
                 type: 'music'
             }
+
+            console.log(respJSON)
+
             break;
         }
         case "movies": {
