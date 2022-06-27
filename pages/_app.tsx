@@ -37,7 +37,7 @@ function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
   })
 
   return (
-    <section className="text-gray-600 h-screen md:flex md:flex-col stepper">
+    <section className="text-gray-500 h-screen md:flex md:flex-col stepper">
       <header className="p-10 md:p-0">
         <Nav links={Config.sections as Links} isMobile={isMobile}></Nav>
       </header>
