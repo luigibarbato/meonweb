@@ -35,7 +35,6 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const Home: NextPage = ({ profile, settings, isMobile }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  console.log(profile)
   return (
     <Layout title={settings.name} description={settings.description} radialBackground={settings.radialBackground} colors={settings.colors}>
       <HeroWithImage isMobile={isMobile} image={avatar.src} primaryColor={settings.colors[0]} secondaryColor={settings.colors[1]} content={profile.content} />

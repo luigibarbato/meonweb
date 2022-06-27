@@ -10,7 +10,6 @@ export async function getLovingItems(lr: LovingRequest): Promise<LovingReponse> 
         case "music": {
             response = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + "tracks");
             let tracksJSON = await response.json()
-            console.log(tracksJSON)
             respJSON = {
                 items: tracksJSON.items.slice(lr.threshold.start, lr.threshold.end),
                 threshold: lr.threshold,
@@ -18,15 +17,11 @@ export async function getLovingItems(lr: LovingRequest): Promise<LovingReponse> 
                 type: 'music'
             }
 
-            console.log(respJSON)
-
             break;
         }
         case "movies": {
             response = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + "movies");
             let filmJSON = await response.json()
-
-            console.log(filmJSON)
 
             respJSON = {
                 items: filmJSON.items.slice(lr.threshold.start, lr.threshold.end),
@@ -41,8 +36,6 @@ export async function getLovingItems(lr: LovingRequest): Promise<LovingReponse> 
             response = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + "books");
 
             let bookJSON = await response.json()
-
-            console.log(bookJSON)
 
             respJSON = {
                 items: bookJSON.items.slice(lr.threshold.start, lr.threshold.end),
