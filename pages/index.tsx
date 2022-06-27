@@ -42,9 +42,9 @@ const sections: Array<SectionPillProps> = [
     name: "Socials",
     color: "#3b5998",
     entries: [
-      <Github url='https://github.com/luigibarbato' />,
-      <Twitter url='https://twitter.com/luigibarbato_' />,
-      <Linkedin url='https://linkedin.com/in/luigibarbato' />
+      <Github key="github" url='https://github.com/luigibarbato' />,
+      <Twitter key="twitter" url='https://twitter.com/luigibarbato_' />,
+      <Linkedin key="linkedin" url='https://linkedin.com/in/luigibarbato' />
     ],
   },
 ]
