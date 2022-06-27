@@ -45,7 +45,7 @@ const Work: NextPage = ({ frontmatter, settings, isMobile }: InferGetStaticProps
     return (
         <Layout title={settings.name} description={settings.description} radialBackground={settings.radialBackground} colors={settings.colors}>
             <HeroWithImage isMobile={isMobile} image={frontmatter.companyLogo} primaryColor={settings.colors[0]} secondaryColor={settings.colors[1]} content={WorkExplain(frontmatter)}>
-                <SectionPill sections={sections}></SectionPill>
+                <SectionPill sections={sections} />
             </HeroWithImage>
         </Layout>
     )

@@ -15,6 +15,7 @@ specifiers:
   postcss: ^8.4.14
   react: 18.1.0
   react-dom: 18.1.0
+  react-icons: ^4.4.0
   react-is: '>= 16.8.0'
   react-markdown: ^8.0.3
   styled-components: ^5.3.5
@@ -34,6 +35,7 @@ dependencies:
   postcss: 8.4.14
   react: 18.1.0
   react-dom: 18.1.0_react@18.1.0
+  react-icons: 4.4.0_react@18.1.0
   react-is: 18.1.0
   react-markdown: 8.0.3_cbpnieqasrszcwkqeh5i7z7nse
   styled-components: 5.3.5_4klixn56hmiqf6hh5nx3jyckvq
@@ -3502,6 +3504,14 @@ packages:
       loose-envify: 1.4.0
       react: 18.1.0
       scheduler: 0.22.0
+    dev: false
+
+  /react-icons/4.4.0_react@18.1.0:
+    resolution: {integrity: sha512-fSbvHeVYo/B5/L4VhB7sBA1i2tS8MkT0Hb9t2H1AVPkwGfVHLJCqyr2Py9dKMxsyM63Eng1GkdZfbWj+Fmv8Rg==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 18.1.0
     dev: false
 
   /react-is/16.13.1:
