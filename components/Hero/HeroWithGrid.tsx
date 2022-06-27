@@ -13,7 +13,7 @@ interface Props {
 }
 export const HeroWithGrid = (props: Props) => {
     return (
-        <div className="flex flex-col sm:flex-col lg:flex-row justify-center">
+        <div className="flex flex-col sm:flex-col lg:flex-row justify-center overflow-y-scroll">
             <div className="order-last sm:order-last lg:order-first basis-1/3 self-center sm:mt-10">
                 <Grid isLoading={props.isLoading} isMobile={props.isMobile} items={props.items}></Grid>
             </div>
