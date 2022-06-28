@@ -37,25 +37,13 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 
-const sections: Array<SectionPillProps> = [
-  {
-    name: "Socials",
-    color: "#3b5998",
-    entries: [
-      <Github key="github" url='https://github.com/luigibarbato' />,
-      <Twitter key="twitter" url='https://twitter.com/luigibarbato_' />,
-      <Linkedin key="linkedin" url='https://linkedin.com/in/luigibarbato' />
-    ],
-  },
-]
+
 
 const Home: NextPage = ({ profile, settings, isMobile }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
   return (
     <Layout title={settings.name} description={settings.description} radialBackground={settings.radialBackground} colors={settings.colors}>
-      <HeroWithImage isMobile={isMobile} image={avatar.src} primaryColor={settings.colors[0]} secondaryColor={settings.colors[1]} content={profile.content}>
-        <SectionPill sections={sections} />
-      </HeroWithImage>
+      <HeroWithImage isMobile={isMobile} image={avatar.src} primaryColor={settings.colors[0]} secondaryColor={settings.colors[1]} content={profile.content} />
     </Layout>
   )
 }
