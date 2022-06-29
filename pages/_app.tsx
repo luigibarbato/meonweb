@@ -5,6 +5,7 @@ import { useState } from "react";
 import Nav from '../components/Navbar'
 import { Config } from '../components/Config'
 import { Links } from '../components/Navbar/NavbarLink/Types/Link'
+import { usePostHog } from 'next-use-posthog'
 
 // TODO: Improve general colors,text etc.
 function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
@@ -35,6 +36,8 @@ function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
       }
     })
   })
+
+  usePostHog(process.env.POSTHOG_API || "", { api_host: 'https://app.posthog.com' })
 
   return (
     <section className="text-gray-500 h-screen md:flex md:flex-col stepper overflow-y-scroll md:overflow-hidden">

@@ -16,6 +16,7 @@
     "gray-matter": "^4.0.3",
     "next": "12.1.6",
     "next-seo": "^5.4.0",
+    "next-use-posthog": "^1.16.0",
     "node-sass": "^7.0.1",
     "postcss": "^8.4.14",
     "react": "18.1.0",
