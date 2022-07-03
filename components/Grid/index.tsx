@@ -16,7 +16,7 @@ const Grid = (props: Props) => {
 const MobileGrid = (props: Props) => {
     if (!props.items || props.isLoading) {
         return (
-            <div className="grid p-3 w-3/4 h-3/4 mx-auto grid-cols-2 gap-10 bg-black rounded-lg bg-opacity-20 animate-pulse">
+            <div className="grid p-3 w-[300px] h-[350px] md:w-[300px] md:h-[450px] mx-auto grid-cols-2 gap-10 bg-black rounded-lg bg-opacity-20 animate-pulse">
                 {Array(4).fill(0).map((_, i) => (
                     <a key={i} href="" className="group my-4 md:my-10 mx-auto">
                         <div className="bg-gray-600 rounded-lg overflow-hidden h-16 w-24 lg:w-[131px] lg:h-[131px] object-center object-fill group-hover:opacity-75">
