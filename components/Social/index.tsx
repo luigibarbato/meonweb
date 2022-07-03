@@ -1,5 +1,6 @@
 import { GrGithub, GrLinkedin, GrTwitter } from "react-icons/gr";
 
+// TODO: This is a temporary solution to get the icons to render.
 interface Props {
     url: string
 }

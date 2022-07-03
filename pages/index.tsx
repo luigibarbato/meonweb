@@ -56,7 +56,9 @@ const Home: NextPage = ({ profile, settings, isMobile }: InferGetStaticPropsType
 
   return (
     <Layout title={settings.name} description={settings.description} radialBackground={settings.radialBackground} colors={settings.colors}>
-      <HeroWithImage isMobile={isMobile} image={avatar.src} primaryColor={settings.colors[0]} secondaryColor={settings.colors[1]} content={profile.content} />
+      <HeroWithImage isMobile={isMobile} image={avatar.src} primaryColor={settings.colors[0]} secondaryColor={settings.colors[1]} content={profile.content}>
+        <SectionPill sections={sections} />
+      </HeroWithImage>
     </Layout>
   )
 }

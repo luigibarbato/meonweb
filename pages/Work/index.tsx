@@ -53,14 +53,6 @@ const Work: NextPage = ({ frontmatter, settings, isMobile }: InferGetStaticProps
             <HeroWithImage isMobile={isMobile} image={frontmatter.companyLogo} primaryColor={settings.colors[0]} secondaryColor={settings.colors[1]} content={WorkExplain(frontmatter)}>
                 <SectionPill sections={sections} />
             </HeroWithImage>
-            <button
-                type="button"
-                onClick={() => {
-                    throw new Error("Sentry Frontend Error");
-                }}
-            >
-                Throw error
-            </button>
         </Layout>
     )
 }
