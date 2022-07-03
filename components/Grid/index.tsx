@@ -27,7 +27,7 @@ const MobileGrid = (props: Props) => {
         )
     }
     return (
-        <div className="grid p-3 w-3/4 h-3/4 mx-auto grid-cols-2 gap-2 bg-black rounded-lg bg-opacity-20">
+        <div className="grid p-3 w-[300px] h-[350px] md:w-[300px] md:h-[450px] mx-auto grid-cols-2 gap-2 bg-black rounded-lg bg-opacity-20">
             {props.items?.map((item: Item) => (
                 <a key={item.name} href={item.url} className="group my-4">
                     <div className="bg-gray-200 w-20 h-20 m-auto rounded-lg overflow-hidden shadow-2xl shadow-cyan-500/50">
