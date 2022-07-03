@@ -12,7 +12,6 @@ const nextConfig = {
     includePaths: [path.join(__dirname, 'styles')],
   },
   webpack: (config) => {
-    // config.experiments = { topLevelAwait: true };
     config.experiments = {
       asyncWebAssembly: true,
       layers: true,

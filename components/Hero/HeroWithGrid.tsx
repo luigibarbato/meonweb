@@ -20,7 +20,7 @@ export const HeroWithGrid = (props: Props) => {
             <div className="flex flex-col self-center basis-1/2">
                 <GradientText primaryColor={props.primaryColor} secondaryColor={props.secondaryColor} direction="right">
                     <p className="text-center text-4xl md:text-5xl m-5 font-extrabold">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem
+                        {props.content}
                     </p>
                 </GradientText>
                 {props.children}

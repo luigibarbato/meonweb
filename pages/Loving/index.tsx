@@ -123,7 +123,7 @@ const Loving: NextPage = ({ settings, isMobile }: any) => {
                 secondaryColor={settings.colors[1]}
                 isLoading={loading}
                 items={data?.items}
-                content="Lorem ipsum, dolor sit amet consectetur adipisicing elit.">
+                content="Before you go, I would to share with you some my feelings.">
                 {/* TODO: Actual ButtonList component doesn´t have a nice gradient effect we want, see commit cafff90 */}
                 <ButtonList buttons={buttons} />
             </HeroWithGrid>
