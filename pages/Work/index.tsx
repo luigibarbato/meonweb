@@ -33,7 +33,6 @@ const Work: NextPage = ({ frontmatter, settings, isMobile }: InferGetStaticProps
         {
             entries: [frontmatter.startDate],
             name: "Start Date",
-            color: "#0f1117",
             pill: {
                 textColor: settings.colors[0],
                 bgColor: "#0f1117",
@@ -42,7 +41,6 @@ const Work: NextPage = ({ frontmatter, settings, isMobile }: InferGetStaticProps
         {
             entries: frontmatter.mainTecnologies,
             name: "Main Technologies",
-            color: "#0f1117",
             pill: {
                 textColor: settings.colors[1],
                 bgColor: "#0f1117",

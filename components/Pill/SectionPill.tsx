@@ -6,7 +6,6 @@ interface Props {
 
 export type SectionPillProps = {
     name: string
-    color: string
     entries: React.ReactNode[]
     pill: {
         textColor: string

@@ -39,8 +39,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const sections: Array<SectionPillProps> = [
   {
-    name: "Socials",
-    color: "#0f1117",
+    name: "Reach me on",
     pill: {
       textColor: "#83A7FC",
       bgColor: "#0f1117",
