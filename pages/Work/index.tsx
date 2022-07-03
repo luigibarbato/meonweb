@@ -33,12 +33,18 @@ const Work: NextPage = ({ frontmatter, settings, isMobile }: InferGetStaticProps
         {
             entries: [frontmatter.startDate],
             name: "Start Date",
-            color: settings.colors[0]
+            pill: {
+                textColor: settings.colors[0],
+                bgColor: "#0f1117",
+            },
         },
         {
             entries: frontmatter.mainTecnologies,
             name: "Main Technologies",
-            color: settings.colors[1],
+            pill: {
+                textColor: settings.colors[1],
+                bgColor: "#0f1117",
+            },
         },
     ]
 

@@ -37,7 +37,20 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 
-
+const sections: Array<SectionPillProps> = [
+  {
+    name: "Reach me on",
+    pill: {
+      textColor: "#83A7FC",
+      bgColor: "#0f1117",
+    },
+    entries: [
+      <Github key="github" url='https://github.com/luigibarbato' />,
+      <Twitter key="twitter" url='https://twitter.com/luigibarbato_' />,
+      <Linkedin key="linkedin" url='https://linkedin.com/in/luigibarbato' />
+    ],
+  },
+]
 
 const Home: NextPage = ({ profile, settings, isMobile }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
