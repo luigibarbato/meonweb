@@ -1,10 +1,7 @@
-# [luigibarbato.digital](https://luigibarbato.digital/)
-
 [![Homepage](./.readme/home.png)](https://luigibarbato.digital/)
-[![Loving Section](./.readme/loving.png)](https://luigibarbato.digital/)
 
+# [luigibarbato.digital](https://luigibarbato.digital/) - My personal space on web
 ## 📦 Made with
-
 - Next.js
 - Typescript
 - styled-components
