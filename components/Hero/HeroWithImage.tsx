@@ -12,9 +12,9 @@ interface Props {
 export const HeroWithImage = ({ ...props }: Props) => {
     return (
         <div className="flex flex-col sm:flex-col lg:flex-row justify-center">
-            <div className="m-10 avatar self-center">
+            <div className={props.isMobile ? "m-10 avatar self-center w-48 h-48" : "m-10 avatar self-center w-72 h-72"}>
                 {/* TODO: replace with Next/image */}
-                <img width={props.isMobile ? "150px" : "300px"} height={props.isMobile ? "150px" : "300px"} className={props.isMobile ? "rounded-lg overflow-hidden object-cover h-36 w-36" : "rounded-lg overflow-hidden object-cover h-[300] w-[350]"} src={props.image} alt="" />
+                <img className="rounded-lg overflow-hidden object-cover aspect-square" src={props.image} alt="" />
             </div>
             <div className="lg:container lg:basis-1/2 lg:self-center m-3 lg:m-16">
                 <GradientText primaryColor={props.primaryColor} secondaryColor={props.secondaryColor} direction="right">
