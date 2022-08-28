@@ -9,7 +9,7 @@ mainTecnologies:
 - Docker
 startDate: "2021-09-15"
 endDate: ""
-companyLogo: https://avatars.githubusercontent.com/u/29403644?s=200&v=4
+companyLogo: https://avatars.githubusercontent.com/u/29403644?s=800&v=4
 companyWebsite: "https://sighup.io/"
 tags:
 - design
