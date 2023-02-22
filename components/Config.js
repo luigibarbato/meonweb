@@ -20,6 +20,13 @@ const Sections = [
     colors: ["#e732bd", "#1b00e8", "#1b00e8"],
     radialBackground: true,
   },
+  {
+    name: "Blog",
+    description: "Is the page where you can see my interests",
+    url: "/Blog",
+    colors: ["#e732bd", "#1b00e8", "#1b00e8"],
+    radialBackground: true,
+  },
 ];
 
 
