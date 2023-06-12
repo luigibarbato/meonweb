@@ -3,17 +3,20 @@ import path from 'path';
 import Layout from '../../components/Layout'
 import matter from 'gray-matter';
 import { GetStaticProps, NextPage } from 'next'
-import Link from 'next/link'
 import { InferGetStaticPropsType } from 'next';
+import { Card } from '../../components/Card';
 
 
 export const getStaticProps: GetStaticProps = async () => {
-    const files = fs.readdirSync(path.join('content/blog'))
+    const dirents = fs.readdirSync("content/blog", { withFileTypes: true });
+    const files = dirents
+        .filter(dirent => dirent.isFile())
+        .map(dirent => dirent.name);
     const posts = files.map(filename => {
         const markdownWithMeta = fs.readFileSync(path.join('content/blog', filename), 'utf-8')
-        const { data: frontMatter } = matter(markdownWithMeta)
+        const { data: metadata } = matter(markdownWithMeta)
         return {
-            frontMatter,
+            metadata,
             slug: filename.split('.')[0]
         }
     })
@@ -27,27 +30,18 @@ export const getStaticProps: GetStaticProps = async () => {
 const Blog: NextPage = ({ posts, settings }: InferGetStaticPropsType<typeof getStaticProps>) => {
     return (
         <Layout title={settings.name} description={settings.description} radialBackground={settings.radialBackground} colors={settings.colors}>
-            {
-                posts.map((post, index) => (
-                    <Link href={'/blog/' + post.slug} passHref key={index}>
-                        <div className="card mb-3 pointer" style={{ maxWidth: '540px' }}>
-                            <div className="row g-0">
-                                <div className="col-md-8">
-                                    <div className="card-body">
-                                        <h5 className="card-title">{post.frontMatter.title}</h5>
-                                        <p className="card-text">{post.frontMatter.description}</p>
-                                        <p className="card-text">
-                                            <small className="text-muted">{post.frontMatter.date}</small>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="col-md-4 m-auto">
-                                </div>
-                            </div>
-                        </div>
-                    </Link>
-                ))
-            }
+            <div className="flex flex-col justify-center items-center gap-6">
+                {posts.map((post, index) => (
+                    <Card
+                        isMobile={false}
+                        image="https://via.placeholder.com/300.png/09f/fff "
+                        textColor='white' title={post.metadata.title}
+                        date={post.metadata.date}
+                        description={post.metadata.description}
+                        link={'/Blog/' + post.slug} />
+                ))}
+            </div>
+
         </Layout>
     )
 }

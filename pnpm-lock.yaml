@@ -1,7 +1,11 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@mdx-js/loader': ^2.3.0
+  '@mdx-js/react': ^2.3.0
+  '@next/mdx': ^13.1.6
   '@sentry/nextjs': ^7.3.1
+  '@tailwindcss/typography': ^0.5.9
   '@types/node': 17.0.42
   '@types/react': 18.0.12
   '@types/styled-components': ^5.1.25
@@ -27,7 +31,11 @@ specifiers:
   webpack: ^5.73.0
 
 dependencies:
+  '@mdx-js/loader': 2.3.0_webpack@5.73.0
+  '@mdx-js/react': 2.3.0_react@18.1.0
+  '@next/mdx': 13.1.6_msthxdjvrhmdkfpqqalumiidgq
   '@sentry/nextjs': 7.3.1_lmboolzhsqe6xjnyxe352zcnzy
+  '@tailwindcss/typography': 0.5.9_tailwindcss@3.1.2
   '@types/styled-components': 5.1.25
   autoprefixer: 10.4.7_postcss@8.4.14
   framer-motion: 6.3.11_ef5jwxihqo6n7gxfmzogljlgcm
@@ -285,6 +293,18 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.13
     dev: false
 
+  /@mdx-js/loader/2.3.0_webpack@5.73.0:
+    resolution: {integrity: sha512-IqsscXh7Q3Rzb+f5DXYk0HU71PK+WuFsEhf+mSV3fOhpLcEpgsHvTQ2h0T6TlZ5gHOaBeFjkXwB52by7ypMyNg==}
+    peerDependencies:
+      webpack: '>=4'
+    dependencies:
+      '@mdx-js/mdx': 2.3.0
+      source-map: 0.7.4
+      webpack: 5.73.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
   /@mdx-js/mdx/2.3.0:
     resolution: {integrity: sha512-jLuwRlz8DQfQNiUCJR50Y09CGPq3fLtmtUQfVrj79E0JWu3dvsVcxVIcfhR5h0iXu+/z++zDrYeiJqifRynJkA==}
     dependencies:
@@ -327,6 +347,17 @@ packages:
     dependencies:
       glob: 7.1.7
     dev: true
+
+  /@next/mdx/13.1.6_msthxdjvrhmdkfpqqalumiidgq:
+    resolution: {integrity: sha512-ZLhXXDJeHbudFpSZT68eYQRzOaNwkaw+NuO7Zvnm5XKB6P7hKSj2dS47ZtitrY0JaL3KxR4FoxUSYeLvdoRwtQ==}
+    peerDependencies:
+      '@mdx-js/loader': '>=0.15.0'
+      '@mdx-js/react': '*'
+    dependencies:
+      '@mdx-js/loader': 2.3.0_webpack@5.73.0
+      '@mdx-js/react': 2.3.0_react@18.1.0
+      source-map: 0.7.4
+    dev: false
 
   /@next/swc-android-arm-eabi/12.1.6:
     resolution: {integrity: sha512-BxBr3QAAAXWgk/K7EedvzxJr2dE014mghBSA9iOEAv0bMgF+MRq4PoASjuHi15M2zfowpcRG8XQhMFtxftCleQ==}
@@ -606,6 +637,18 @@ packages:
     transitivePeerDependencies:
       - encoding
       - supports-color
+    dev: false
+
+  /@tailwindcss/typography/0.5.9_tailwindcss@3.1.2:
+    resolution: {integrity: sha512-t8Sg3DyynFysV9f4JDOVISGsjazNb48AeIYQwcL+Bsq5uf4RYL75C1giZ43KISjeDGBaTN3Kxh7Xj/vRSMJUUg==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0 || insiders'
+    dependencies:
+      lodash.castarray: 4.4.0
+      lodash.isplainobject: 4.0.6
+      lodash.merge: 4.6.2
+      postcss-selector-parser: 6.0.10
+      tailwindcss: 3.1.2_postcss@8.4.14
     dev: false
 
   /@tootallnate/once/1.1.2:
@@ -2861,9 +2904,16 @@ packages:
     dependencies:
       p-locate: 4.1.0
 
+  /lodash.castarray/4.4.0:
+    resolution: {integrity: sha512-aVx8ztPv7/2ULbArGJ2Y42bG1mEQ5mGjpdvrbJcJFU3TbYybe+QlLS4pst9zV52ymy2in1KpFPiZnAOATxD4+Q==}
+    dev: false
+
+  /lodash.isplainobject/4.0.6:
+    resolution: {integrity: sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==}
+    dev: false
+
   /lodash.merge/4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
-    dev: true
 
   /lodash/4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}

@@ -9,7 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mdx-js/loader": "^2.3.0",
+    "@mdx-js/react": "^2.3.0",
+    "@next/mdx": "^13.1.6",
     "@sentry/nextjs": "^7.3.1",
+    "@tailwindcss/typography": "^0.5.9",
     "@types/styled-components": "^5.1.25",
     "autoprefixer": "^10.4.7",
     "framer-motion": "^6.3.11",

@@ -76,7 +76,7 @@ const Layout = ({ children, title, description, colors, radialBackground }: Prop
         animate="enter"
         exit="exit"
         variants={variants}
-        transition={{ type: 'linear' }}
+        transition={{ type: 'linear'}}
       >
         {radialBackground ? (
           <RadialBackground primary={colors[0]} secondary={colors[1]} tertiary={colors[2]} className="container mx-auto">

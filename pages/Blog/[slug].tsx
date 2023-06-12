@@ -4,13 +4,15 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
-const Post = ({ frontMatter: { title, date }, mdxSource }) => {
+const Post = ({ frontMatter: { title, description, date }, content }) => {
     return (
-        <div>
+        <div className="container mx-auto">
             <h1 className="font-bold text-7xl mt-24 mb-12">{title}</h1>
+            <h2 className="text-2xl mb-12">{description}</h2>
+            <div className="w-12 h-1 bg-gray-800 mb-12"></div>
             <time className="text-gray-500 italic">{date}</time>
-            <p className="prose mt-12">
-                <MDXRemote {...mdxSource} />
+            <p className="prose lg:prose-xl mt-12">
+                {content}
             </p>
         </div>
     );
@@ -22,7 +24,7 @@ export const getStaticPaths = async () => {
 
     const paths = files.map(filename => ({
         params: {
-            slug: filename.replace('.mdx', '')
+            slug: filename.replace('.md', '')
         }
     }))
 
@@ -34,16 +36,15 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params: { slug } }) => {
     const markdownWithMeta = fs.readFileSync(path.join('content/blog',
-        slug + '.mdx'), 'utf-8')
+        slug + '.md'), 'utf-8')
 
     const { data: frontMatter, content } = matter(markdownWithMeta)
-    const mdxSource = await serialize(content)
 
     return {
         props: {
             frontMatter,
             slug,
-            mdxSource
+            content
         }
     }
 }
