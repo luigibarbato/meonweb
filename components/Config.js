@@ -10,7 +10,7 @@ const Sections = [
     name: "Work",
     description: "Is the page where you can see my work",
     url: "/Work",
-    colors: ["#D3ED10", "#FF7A45", "#FF7A45"],
+    colors: ["#1C74E7", "#2FC3C1", "#2FC3C1"],
     radialBackground: true,
   },
   {
