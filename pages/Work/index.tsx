@@ -7,7 +7,7 @@ import { HeroWithImage } from '../../components/Hero/HeroWithImage';
 import { SectionPill, SectionPillProps } from '../../components/Pill/SectionPill';
 
 export const getStaticProps: GetStaticProps = async () => {
-    const readFile = fs.readFileSync(`content/work/sighup.md`, 'utf-8');
+    const readFile = fs.readFileSync(`content/work/radical.md`, 'utf-8');
 
     const { data: frontmatter } = matter(readFile);
 
