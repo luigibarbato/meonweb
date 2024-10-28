@@ -18,7 +18,7 @@ export const SectionPill = (props: Props) => {
         <div className={`grid grid-cols-${props.sections.length} text-center md:text-start font-semibold`}>
             {props.sections.map((section, i) => (
                 <div key={i}>
-                    <p className='my-2 text-base sm:text-lg md:text-xl text-center md:text-start'>{section.name}</p>
+                    <p className='my-2 text-base sm:text-lg md:text-xl text-center md:text-start font-bold'>{section.name}</p>
                     {section.entries.map((entry, j) => (
                         <Pill {...section.pill} key={j} component={entry} />
                     ))}
