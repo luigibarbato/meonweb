@@ -1,16 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Rules for Radial Background */
-@property --rotate {
-  syntax: "<angle>";
-  initial-value: 132deg;
-  inherits: false;
-}
-
-:root {
-  --radiusGradient-height: 50vh;
-  --radiusGradient-width: calc(var(--radiusGradient-height) / 1.5);
-}
-/**/

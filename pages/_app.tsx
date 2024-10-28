@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app'
 import { useEffect } from 'react'
 import { useState } from "react";
 import Nav from '../components/Navbar'
-import { Config } from '../components/Config'
+import { Config } from '../Config'
 import { Links } from '../components/Navbar/NavbarLink/Types/Link'
 
 // TODO: Improve general colors,text etc.
