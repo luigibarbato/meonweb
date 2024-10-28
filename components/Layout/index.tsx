@@ -59,6 +59,7 @@ const RadialBackground = styled.div<RadialBackgroundProps>`
   }
 
   &::after {
+    will-change: transform;
     position: absolute;
     content: "";
     top: calc(var(--radiusGradient-height) / 6);
@@ -74,6 +75,10 @@ const RadialBackground = styled.div<RadialBackgroundProps>`
     opacity: 0.3;
     transition: opacity .5s;
     animation: ${spin} 8.5s linear infinite;
+    @media (prefers-reduced-motion: reduce) {
+      animation-duration: 16s;
+      filter: blur(calc(var(--radiusGradient-height) / 4));
+    }
   }
 `;
 
