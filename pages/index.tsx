@@ -2,7 +2,7 @@ import { GetStaticProps, NextPage, } from 'next'
 import { InferGetStaticPropsType } from 'next';
 import fs from 'fs';
 import matter from 'gray-matter';
-import avatar from '../public/avatar2.png'
+import avatar from '../public/avatar.png'
 import Layout from '../components/Layout';
 import { HeroWithImage } from '../components/Hero/HeroWithImage';
 import { SectionPill, SectionPillProps } from '../components/Pill/SectionPill';
