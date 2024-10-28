@@ -62,12 +62,12 @@ const RadialBackground = styled.div<RadialBackgroundProps>`
   transform: scale(0.8);
   filter: blur(calc(var(--radiusGradient-height) / 6));
   background-image: linear-gradient(var(--rotate), ${props => props.primary}, ${props => props.secondary} 43%, ${props => props.tertiary});
-    opacity: 0.3;
+  opacity: 0.3;
   transition: opacity .5s;
   animation: ${spin} 8.5s linear infinite;
 `
 
-const Layout = ({ children, title, description, colors, radialBackground }: Props) => {
+const Layout = ({ children, title, description, colors, radialBackground: isRadialBackground }: Props) => {
   return (
     <div>
       <NextSeo title={title} description={description} openGraph={{ title, description }} />
@@ -78,7 +78,7 @@ const Layout = ({ children, title, description, colors, radialBackground }: Prop
         variants={variants}
         transition={{ type: 'linear' }}
       >
-        {radialBackground ? (
+        {isRadialBackground ? (
           <RadialBackground primary={colors[0]} secondary={colors[1]} tertiary={colors[2]} className="container mx-auto">
             {children}
           </RadialBackground>) : (

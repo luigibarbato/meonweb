@@ -1,3 +1,8 @@
+const Default = {
+  background: "#0f1117",
+  foreground: "#E0E0E0"
+}
+
 const Sections = [
   {
     name: "Home",
@@ -25,4 +30,5 @@ const Sections = [
 
 export const Config = {
   sections: Sections,
+  default: Default
 }
