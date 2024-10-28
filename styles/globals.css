@@ -14,7 +14,3 @@
   --radiusGradient-width: calc(var(--radiusGradient-height) / 1.5);
 }
 /**/
-
-body {
-  background: #0f1117;
-}
