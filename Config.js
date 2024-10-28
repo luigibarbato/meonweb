@@ -1,6 +1,6 @@
 const Default = {
   background: "#0f1117",
-  foreground: "#E0E0E0"
+  foreground: "#EDF0F2"
 }
 
 const Sections = [
@@ -8,7 +8,7 @@ const Sections = [
     name: "Home",
     description: "Is the home page of the website",
     url: "/",
-    colors: ["#A9E775", "#5A45FF", "#5A45FF"],
+    colors: ["#83FBFB", "#EA1220", "#5A45FF"],
     radialBackground: true,
   },
   {
