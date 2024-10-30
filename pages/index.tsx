@@ -6,7 +6,7 @@ import avatar from '../public/avatar.png'
 import Layout from '../components/Layout';
 import { HeroWithImage } from '../components/Hero/HeroWithImage';
 import { SectionPill, SectionPillProps } from '../components/Pill/SectionPill';
-import { SocialLink } from '../components/Social';
+import { SocialLink, SocialPlatform } from '../components/Social';
 
 type ProfileData = {
   data: {
@@ -48,7 +48,7 @@ const Home: NextPage = ({ profile, settings, isMobile }: InferGetStaticPropsType
         .filter((social:string) => social.trim() !== '')
         .map((social:string) => {
           const [platform, username] = social.split(':');
-          return <SocialLink key={platform} username={username} platform={platform} />;
+          return <SocialLink key={platform} username={username} platform={platform as SocialPlatform} />;
         }) : [],
     }]
 

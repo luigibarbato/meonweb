@@ -1,30 +1,38 @@
 import { GrGithub, GrLinkedin, GrTwitter } from "react-icons/gr";
 
+export type SocialPlatform = 'github' | 'linkedin' | 'twitter';
+
 interface SocialProps {
     username: string;
-    platform: 'github' | 'linkedin' | 'twitter';
+    platform: SocialPlatform;
 }
 
-const platformDetails = {
+const platformDetails: Record<SocialPlatform, { url: (username: string) => string; icon: JSX.Element; label: string }> = {
     github: {
-        url: (username: string) => `https://github.com/${username}`,
+        url: (username) => `https://github.com/${username}`,
         icon: <GrGithub title='Github' />,
-        label: 'Github'
+        label: 'Github',
     },
     twitter: {
-        url: (username: string) => `https://x.com/${username}`,
+        url: (username) => `https://x.com/${username}`,
         icon: <GrTwitter title='Twitter' />,
-        label: 'Twitter'
+        label: 'Twitter',
     },
     linkedin: {
-        url: (username: string) => `https://linkedin.com/in/${username}`,
+        url: (username) => `https://linkedin.com/in/${username}`,
         icon: <GrLinkedin title='Linkedin' />,
-        label: 'Linkedin'
-    }
+        label: 'Linkedin',
+    },
 };
 
 export const SocialLink = ({ username, platform }: SocialProps) => {
-    const { url, icon, label } = platformDetails[platform];
+    const platformDetail = platformDetails[platform];
+
+    if (!platformDetail) {
+        throw new Error(`The Social Platform ${platform} is not supported.`);
+    }
+
+    const { url, icon, label } = platformDetail;
     return (
         <a href={url(username)}>
             <span className="flex flex-row items-center gap-1">
