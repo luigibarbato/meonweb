@@ -8,7 +8,8 @@ type Props = {
   title: string
   titleTemplate: string
   description: string
-  descriptionTemplate: string
+  locale: string
+  siteName: string
   url: string
   colors: Array<string>
   radialBackground: boolean,
@@ -85,17 +86,20 @@ const RadialBackground = styled.div<RadialBackgroundProps>`
   }
 `;
 
-const Layout = ({ children, url, titleTemplate, title, descriptionTemplate, description, colors, radialBackground: isRadialBackground }: Props) => {
+const Layout = ({ children, url, locale, siteName, titleTemplate, title, description, colors, radialBackground: isRadialBackground }: Props) => {
   return (
     <div className="m-auto self-center">
       <NextSeo
         title={title}
+        titleTemplate={titleTemplate}
         description={description}
         openGraph={{
           title,
           description,
+          site_name: siteName,
           type: 'website',
-          url: `${url}`,
+          url,
+          locale,
           images: [
             {
               url: `${url}/avatar.png`,

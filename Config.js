@@ -5,8 +5,9 @@ const Default = {
 
 const Seo = {
   websiteUrl: "https://luigibarbato.digital",
-  defaultTitleTemplate: "Luigi Barbato - Software Engineer | ",
-  defaultDescriptionTemplate: "Luigi Barbato - Software Engineer | "
+  defaultTitleTemplate: "Luigi Barbato | Software Engineer | %s",
+  locale: "en_IE",
+  siteName: "Luigi Barbato | Software Engineer"
 }
 
 const Sections = [
