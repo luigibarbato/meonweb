@@ -4,10 +4,12 @@ const Default = {
 }
 
 const Seo = {
-  websiteUrl: "https://luigibarbato.digital",
-  defaultTitleTemplate: "Luigi Barbato | Software Engineer | %s",
-  locale: "en_IE",
-  siteName: "Luigi Barbato | Software Engineer"
+  siteName: "Luigi Barbato - Software Engineer",
+  siteDescription: "Experienced Software Engineer specializing in web development, creating innovative solutions and delivering high-quality software",
+  siteUrl: "https://luigibarbato.digital",
+  siteTitleTemplate: "Luigi Barbato - Software Engineer | %s",
+  twitterUsername: "luigibarbato_",
+  locale: "en_IE"
 }
 
 const Sections = [
