@@ -34,7 +34,12 @@ export const SocialLink = ({ username, platform }: SocialProps) => {
 
     const { url, icon, label } = platformDetail;
     return (
-        <a href={url(username)}>
+        <a 
+          href={url(username)}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Visit ${username} on ${label}`}
+        >
             <span className="flex flex-row items-center gap-1">
                 {icon}{label}
             </span>
