@@ -47,7 +47,7 @@ function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
       <header className="p-10 md:p-0">
         <Nav links={Config.sections as Links} isMobile={isMobile}></Nav>
       </header>
-      <Layout titleTemplate={Config.seo.defaultTitleTemplate} title={currentPage.name} description={currentPage.description} url={Config.seo.websiteUrl} locale={Config.seo.locale} siteName={Config.seo.siteName} radialBackground={currentPage.radialBackground} colors={currentPage.colors}>
+      <Layout titleTemplate={Config.seo.siteTitleTemplate} title={currentPage.name} description={currentPage.description} siteUrl={Config.seo.siteUrl} locale={Config.seo.locale} siteName={Config.seo.siteName} twitterUsername={Config.seo.twitterUsername} radialBackground={currentPage.radialBackground} colors={currentPage.colors}>
         <Component {...pageProps} settings={currentPage} isMobile={isMobile} />
       </Layout>
     </section>

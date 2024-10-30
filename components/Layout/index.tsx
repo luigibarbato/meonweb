@@ -10,7 +10,8 @@ type Props = {
   description: string
   locale: string
   siteName: string
-  url: string
+  siteUrl: string
+  twitterUsername: string
   colors: Array<string>
   radialBackground: boolean,
 }
@@ -86,7 +87,7 @@ const RadialBackground = styled.div<RadialBackgroundProps>`
   }
 `;
 
-const Layout = ({ children, url, locale, siteName, titleTemplate, title, description, colors, radialBackground: isRadialBackground }: Props) => {
+const Layout = ({ children, siteUrl, locale, siteName, titleTemplate, title, description, twitterUsername, colors, radialBackground: isRadialBackground }: Props) => {
   return (
     <div className="m-auto self-center">
       <NextSeo
@@ -97,12 +98,12 @@ const Layout = ({ children, url, locale, siteName, titleTemplate, title, descrip
           title,
           description,
           site_name: siteName,
+          url: siteUrl,
           type: 'website',
-          url,
           locale,
           images: [
             {
-              url: `${url}/avatar.png`,
+              url: `${siteUrl}/avatar.png`,
               width: 800,
               height: 600,
               alt: 'Avatar Image',
@@ -110,8 +111,8 @@ const Layout = ({ children, url, locale, siteName, titleTemplate, title, descrip
           ],
         }}
         twitter={{
-          handle: '@handle',
-          site: '@site',
+          handle: twitterUsername,
+          site: twitterUsername,
           cardType: 'summary_large_image',
         }}
       />
