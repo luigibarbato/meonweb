@@ -8,7 +8,7 @@ const Sections = [
     name: "Home",
     description: "Is the home page of the website",
     url: "/",
-    colors: ["#83FBFB", "#EA1220", "#5A45FF"],
+    colors: ["#83FBFB", "#EA1220", "#0f1117"],
     radialBackground: true,
   },
   {
