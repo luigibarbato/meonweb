@@ -6,7 +6,10 @@ import styled, { keyframes } from 'styled-components';
 type Props = {
   children: ReactNode
   title: string
+  titleTemplate: string
   description: string
+  descriptionTemplate: string
+  url: string
   colors: Array<string>
   radialBackground: boolean,
 }
@@ -82,10 +85,32 @@ const RadialBackground = styled.div<RadialBackgroundProps>`
   }
 `;
 
-const Layout = ({ children, title, description, colors, radialBackground: isRadialBackground }: Props) => {
+const Layout = ({ children, url, titleTemplate, title, descriptionTemplate, description, colors, radialBackground: isRadialBackground }: Props) => {
   return (
-    <div>
-      <NextSeo title={title} description={description} openGraph={{ title, description }} />
+    <div className="m-auto self-center">
+      <NextSeo
+        title={title}
+        description={description}
+        openGraph={{
+          title,
+          description,
+          type: 'website',
+          url: `${url}`,
+          images: [
+            {
+              url: `${url}/avatar.png`,
+              width: 800,
+              height: 600,
+              alt: 'Avatar Image',
+            },
+          ],
+        }}
+        twitter={{
+          handle: '@handle',
+          site: '@site',
+          cardType: 'summary_large_image',
+        }}
+      />
       <motion.main
         initial="hidden"
         animate="enter"

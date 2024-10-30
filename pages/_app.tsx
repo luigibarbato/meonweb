@@ -5,6 +5,7 @@ import { useState } from "react";
 import Nav from '../components/Navbar'
 import { Config } from '../Config'
 import { Links } from '../components/Navbar/NavbarLink/Types/Link'
+import Layout from '../components/Layout';
 
 interface Page {
   name: string;
@@ -46,9 +47,9 @@ function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
       <header className="p-10 md:p-0">
         <Nav links={Config.sections as Links} isMobile={isMobile}></Nav>
       </header>
-      <div className="m-auto self-center">
+      <Layout titleTemplate={Config.seo.defaultTitleTemplate} title={currentPage.name} description={currentPage.description} descriptionTemplate={Config.seo.defaultDescriptionTemplate} url={Config.seo.websiteUrl} radialBackground={currentPage.radialBackground} colors={currentPage.colors}>
         <Component {...pageProps} settings={currentPage} isMobile={isMobile} />
-      </div>
+      </Layout>
     </section>
   );
 }
