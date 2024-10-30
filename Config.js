@@ -3,6 +3,12 @@ const Default = {
   foreground: "#EDF0F2"
 }
 
+const Seo = {
+  websiteUrl: "https://luigibarbato.digital",
+  defaultTitleTemplate: "Luigi Barbato - Software Engineer | ",
+  defaultDescriptionTemplate: "Luigi Barbato - Software Engineer | "
+}
+
 const Sections = [
   {
     name: "Home",
@@ -30,5 +36,6 @@ const Sections = [
 
 export const Config = {
   sections: Sections,
-  default: Default
+  default: Default,
+  seo: Seo
 }

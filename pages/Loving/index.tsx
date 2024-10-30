@@ -116,18 +116,16 @@ const Loving: NextPage = ({ settings, isMobile }: any) => {
     }]
 
     return (
-        <Layout title={settings.name} description={settings.description} radialBackground={settings.radialBackground} colors={settings.colors}>
-            <HeroWithGrid
-                isMobile={isMobile}
-                primaryColor={settings.colors[0]}
-                secondaryColor={settings.colors[1]}
-                isLoading={loading}
-                items={data?.items}
-                content="Before you go, I would to share some my feelings with you.">
-                {/* TODO: Actual ButtonList component doesn´t have a nice gradient effect we want, see commit cafff90 */}
-                <ButtonList buttons={buttons} />
-            </HeroWithGrid>
-        </Layout >
+        <HeroWithGrid
+            isMobile={isMobile}
+            primaryColor={settings.colors[0]}
+            secondaryColor={settings.colors[1]}
+            isLoading={loading}
+            items={data?.items}
+            content="Before you go, I would to share some my feelings with you.">
+            {/* TODO: Actual ButtonList component doesn´t have a nice gradient effect we want, see commit cafff90 */}
+            <ButtonList buttons={buttons} />
+        </HeroWithGrid>
     )
 }
 

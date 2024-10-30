@@ -45,19 +45,17 @@ const Home: NextPage = ({ profile, settings, isMobile }: InferGetStaticPropsType
         bgColor: settings.colors[2],
       },
       entries: Array.isArray(profile.data.socials) ? profile.data.socials
-        .filter((social:string) => social.trim() !== '')
-        .map((social:string) => {
+        .filter((social: string) => social.trim() !== '')
+        .map((social: string) => {
           const [platform, username] = social.split(':');
           return <SocialLink key={platform} username={username} platform={platform as SocialPlatform} />;
         }) : [],
     }]
 
   return (
-    <Layout title={settings.name} description={settings.description} radialBackground={settings.radialBackground} colors={settings.colors}>
-      <HeroWithImage isMobile={isMobile} image={avatar.src} primaryColor={settings.colors[0]} secondaryColor={settings.colors[1]} content={profile.content}>
-        <SectionPill sections={socialSections} />
-      </HeroWithImage>
-    </Layout>
+    <HeroWithImage isMobile={isMobile} image={avatar.src} primaryColor={settings.colors[0]} secondaryColor={settings.colors[1]} content={profile.content}>
+      <SectionPill sections={socialSections} />
+    </HeroWithImage>
   )
 }
 
