@@ -6,33 +6,40 @@ import Nav from '../components/Navbar'
 import { Config } from '../Config'
 import { Links } from '../components/Navbar/NavbarLink/Types/Link'
 
-// TODO: Improve general colors,text etc.
+interface Page {
+  name: string;
+  description: string;
+  url: string;
+  colors: string[];
+  radialBackground: boolean;
+  socials?: { name: string; username: string }[];
+}
+
 function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
-  // TODO: Must be an interface/type
-  const [currentPage, setCurrentPage] = useState({
+  const [currentPage, setCurrentPage] = useState<Page>({
     name: "",
     description: "",
     url: "",
     colors: ["", ""],
-  },)
+    radialBackground: false,
+  });
 
-  // TODO: Must be an interface/type
-  const [registeredPages] = useState(Config.sections)
+  const [registeredPages] = useState<Page[]>(Config.sections);
 
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     let res = window.matchMedia("only screen and (max-width: 912px)").matches;
-    setIsMobile(res)
-  }, [setIsMobile])
+    setIsMobile(res);
+  }, [setIsMobile]);
 
   useEffect(() => {
     registeredPages.forEach(section => {
       if (location.pathname.includes(section.url)) {
-        setCurrentPage(section)
+        setCurrentPage(section);
       }
-    })
-  })
+    });
+  });
 
   return (
     <section className="h-screen md:flex md:flex-col stepper overflow-y-scroll md:overflow-hidden">
@@ -40,11 +47,10 @@ function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
         <Nav links={Config.sections as Links} isMobile={isMobile}></Nav>
       </header>
       <div className="m-auto self-center">
-        {/* TODO: Settings Must be an interface/type */}
         <Component {...pageProps} settings={currentPage} isMobile={isMobile} />
       </div>
-    </section >
-  )
+    </section>
+  );
 }
 
-export default MyApp
+export default MyApp;
