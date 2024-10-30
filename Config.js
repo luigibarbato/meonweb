@@ -13,21 +13,21 @@ const Seo = {
 const Sections = [
   {
     name: "Home",
-    description: "Is the home page of the website",
+    description: "Welcome to the home page, your gateway to exploring the website.",
     url: "/",
     colors: ["#83FBFB", "#EA1220", "#0f1117"],
     radialBackground: true,
   },
   {
     name: "Work",
-    description: "Is the page where you can see my work",
+    description: "Discover my professional journey and the projects I've worked on.",
     url: "/Work",
     colors: ["#1C74E7", "#2FC3C1", "#2FC3C1"],
     radialBackground: true,
   },
   {
     name: "Loving",
-    description: "Is the page where you can see my interests",
+    description: "Explore my personal interests and passions.",
     url: "/Loving",
     colors: ["#e732bd", "#1b00e8", "#1b00e8"],
     radialBackground: true,
