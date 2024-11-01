@@ -11,6 +11,8 @@ mainTecnologies:
 - Prometheus
 - Postgres
 - Redis
+- Go
+- gRPC
 startDate: "01-11-2024"
 endDate: "Present"
 companyLogo: https://avatars.githubusercontent.com/u/5835489?v=4
