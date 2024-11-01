@@ -24,7 +24,7 @@ const Sections = [
     name: "Work",
     description: "Discover my professional journey and the projects I've worked on.",
     url: "/Work",
-    colors: ["#1C74E7", "#2FC3C1", "#2FC3C1"],
+    colors: ["#4CBC88", "#A8A4A0", "#4D4845"],
     radialBackground: true,
   },
   {
