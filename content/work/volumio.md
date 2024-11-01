@@ -1,7 +1,7 @@
 ---
 companyName: Volumio
 description: The easiest way to store luggage anywhere
-role: DevOps Engineer
+role: Software Engineer
 mainTecnologies:
 - Kong
 - Fly.io
